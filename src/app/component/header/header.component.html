@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
+  <i style="font-size:30px;color: white;" class="fa-solid fa-meteor m-2"></i>
+  <a class="navbar-brand" routerLink="products">Sirius</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="products">Products <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="orders">Orders</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0 w-50 mx-auto">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search"[(ngModel)]="searchTerm"
+        (keyup)="search($event)">
+    </form>
+  </div>
+  <button *ngIf="isLoggedIn" (click)="logout()" routerLink="login" class="btn" style="color:white">
+    Logout
+  </button>
+
+  <button *ngIf="!isLoggedIn" routerLink="login" class="btn" style="color:white">
+    Login
+  </button>
+
+  <button *ngIf="!isLoggedIn" routerLink="signup" class="btn" style="color:white">
+    Signup
+  </button>
+  <button routerLink="cart" class="btn" style="color:white">
+    <i style="font-size: 25px;" class="fa-solid fa-cart-shopping"></i>
+    <div style="font-size: 10px" class="badge bg-success">
+      {{ totalItem }}
+    </div>
+  </button>
+</nav>

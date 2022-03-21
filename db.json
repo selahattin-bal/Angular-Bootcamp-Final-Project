@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Basic Denim Jacket",
+      "price": 119.9,
+      "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
+      "category": "mens clothing",
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210924083519.png/format:webp",
+      "star": 5
+    },
+    {
+      "id": 2,
+      "title": "Trouser",
+      "price": 79.9,
+      "description": "Straight-fit trousers featuring side in-seam pockets at the hip and welt pockets at the back. Contrast side stripe on the legs. Side slit at the hem. Hidden metal hook fastening at",
+      "category": "mens clothing",
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
+      "star": 4
+    },
+    {
+      "id": 3,
+      "title": "Blazer",
+      "price": 246.9,
+      "description": "Blazer with a notched lapel collar. Long sleeves with buttoned cuffs. Chest welt pocket and hip flap pocket. Inside pocket detail. Back vent at the hem. Front button",
+      "category": "womens clothing",
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210915145926.png/format:webp",
+      "star": 3.5
+    },
+    {
+      "id": 4,
+      "title": "White T-shirt",
+      "price": 734.9,
+      "description": "Round neck T-shirt with short sleeves. Contrast fabric appliqué detail.",
+      "category": "womens clothing",
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210913160731.png/format:webp",
+      "star": 5
+    },
+    {
+      "id": 5,
+      "title": "Sweatshirt",
+      "price": 168.9,
+      "description": "Long sleeve sweatshirt with a round neckline and ribbed trims.",
+      "category": "womens clothing",
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315140745.png/format:webp",
+      "star": 5
+    },
+    {
+      "id": 6,
+      "title": "Bomber Jacket",
+      "price": 326.9,
+      "description": "Leather jacket. High neck and long sleeves with ribbed cuffs. Welt pockets at the hip. Contrast embroidery on the front and back. Elastic hem. Snap buttons down the",
+      "category": "mens clothing",
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20211008180753.png/format:webp",
+      "star": 3.5
+    }
+  ],
+  "signupUsers": [
+    {
+      "username": "deneme",
+      "email": "deneme@deneme",
+      "password": "deneme",
+      "id": 1
+    }
+  ],
+  "orders": [
+    [
+      {
+        "id": 1,
+        "title": "Basic Denim Jacket",
+        "price": 119.9,
+        "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
+        "category": "mens clothing",
+        "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210924083519.png/format:webp",
+        "star": 5,
+        "quantity": 1,
+        "total": 119.9
+      },
+      {
+        "id": 2,
+        "title": "Trouser",
+        "price": 79.9,
+        "description": "Straight-fit trousers featuring side in-seam pockets at the hip and welt pockets at the back. Contrast side stripe on the legs. Side slit at the hem. Hidden metal hook fastening at",
+        "category": "mens clothing",
+        "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
+        "star": 4,
+        "quantity": 1,
+        "total": 79.9
+      },
+      {
+        "id": 3,
+        "title": "Blazer",
+        "price": 246.9,
+        "description": "Blazer with a notched lapel collar. Long sleeves with buttoned cuffs. Chest welt pocket and hip flap pocket. Inside pocket detail. Back vent at the hem. Front button",
+        "category": "womens clothing",
+        "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210915145926.png/format:webp",
+        "star": 3.5,
+        "quantity": 1,
+        "total": 246.9
+      }
+    ]
+  ]
+}

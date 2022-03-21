@@ -1,0 +1,42 @@
+<body class="text-center mt-5"  style="height:571px;">
+  <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="form-signin">
+    <i class="fa-solid fa-meteor" style="font-size: 60px;"></i>
+    <h1 class="h3 mb-3 mt-3 font-weight-normal">Please Sign Up</h1>
+    <!-- Username -->
+    <div class="form-group">
+      <label for="exampleInputUsername1" class="sr-only">Username</label>
+      <input formControlName="username" type="username" class="form-control" id="exampleInputUsername1"
+        placeholder="Username" />
+      <span class="text-danger" *ngIf="
+          signupForm.controls['username'].dirty &&
+          signupForm.hasError('required', 'username')
+        ">Username is required</span>
+      <!-- Email Adress -->
+      <label for="exampleInputEmail1" class="sr-only">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+        placeholder="Email" />
+      <span class="text-danger" *ngIf="
+          signupForm.controls['email'].dirty &&
+          signupForm.hasError('required', 'email')
+        ">Email is required</span>
+      <span class="text-danger" *ngIf="!signupForm.valid && signupForm.hasError('email', 'email')">Email is not
+        valid</span>
+      <!-- Password -->
+      <label for="exampleInputPassword1" class="sr-only">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
+        placeholder="Password" />
+      <span class="text-danger" *ngIf="
+          signupForm.controls['password'].dirty &&
+          signupForm.hasError('required', 'password')
+        ">Password is required</span>
+      <span class="text-danger" *ngIf="
+          !signupForm.valid && signupForm.hasError('minlength', 'password')
+        ">Password must be at least 6 characters</span>
+    </div>
+    <!-- Login button -->
+    <button [disabled]="!signupForm.valid" type="submit" class="btn btn-lg btn-primary btn-block">
+      Sign Up
+    </button>
+    <p class="mt-4 mb-3 text-muted">&copy; 2022-2023</p>
+  </form>
+</body>
