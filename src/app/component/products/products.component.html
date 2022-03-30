@@ -1,9 +1,9 @@
 <!-- Category section -->
-<div style="
+<div style="margin-top:70px ;
     background-color: #2f4353;
 background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
   " class="mh-100">
-    <div class=" container-fluid" style="margin-top:70px;background-color: white;">
+    <div class=" container-fluid" style="background-color: white;">
         <div class="container d-flex">
             <div class="item">
                 <button style="border: none; background: none" (click)="categoryFilterHandler('')">
@@ -26,6 +26,7 @@ background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
     <!-- Products-->
     <div class="container mx-auto mt-4">
         <div class="row">
+            <!-- looping all items if searching action happen filtered search items  will be looped-->
             <ng-container *ngFor="let item of filterCategory | filterHandler: searchKey:'title'">
                 <div class="col-md-4">
                     <div class="card" style="width: 18rem">
@@ -48,7 +49,7 @@ background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
               ">
                             {{ item.description }}
                         </p>
-                        <!-- 1 den 5 e kadar sıralı array gönderiliyor db den gelen değer küçükse dolu yıldız boşsa boş yıldız bu sayede puanı gösteriyor -->
+                 <!-- With help of star array adding 5 star according to data from server -->
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item" *ngFor="let star of star">
                                 <i [class]="
@@ -68,3 +69,5 @@ background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
         </div>
     </div>
 </div>
+
+<app-footer></app-footer>

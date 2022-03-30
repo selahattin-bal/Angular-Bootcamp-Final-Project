@@ -1,30 +1,52 @@
 <!-- container for login -->
 
-<body class="text-center mt-5" style="height:571px;">
+<body class="text-center mt-5" style="height: 621px">
   <!-- Form -->
   <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-signin">
-    <i class="fa-solid fa-meteor" style="font-size: 60px;"></i>
+    <i class="fa-solid fa-meteor" style="font-size: 60px"></i>
     <h1 class="h3 mb-3 mt-3 font-weight-normal">Please Login</h1>
     <!-- Email -->
     <div class="form-group">
       <label for="exampleInputEmail1" class="sr-only">Email address</label>
-      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
-        placeholder=" Email" />
-      <span class="text-danger" *ngIf="
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder=" Email"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
           loginForm.controls['email'].dirty &&
           loginForm.hasError('required', 'email')
-        ">Email is required</span>
+        "
+        >Email is required</span
+      >
       <!-- Password -->
       <label for="exampleInputPassword1" class="sr-only">Password</label>
-      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
-        placeholder="Password" />
-      <span class="text-danger" *ngIf="
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
           loginForm.controls['password'].dirty &&
           loginForm.hasError('required', 'password')
-        ">Password is required</span>
+        "
+        >Password is required</span
+      >
     </div>
     <!-- Login button -->
-    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-lg btn-primary btn-block">
+    <button
+      [disabled]="!loginForm.valid"
+      type="submit"
+      class="btn btn-lg btn-primary btn-block"
+    >
       Login
     </button>
     <p class="mt-4 mb-3 text-muted">&copy; 2022-2023</p>

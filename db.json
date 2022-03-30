@@ -86,17 +86,6 @@
         "star": 4,
         "quantity": 1,
         "total": 79.9
-      },
-      {
-        "id": 3,
-        "title": "Blazer",
-        "price": 246.9,
-        "description": "Blazer with a notched lapel collar. Long sleeves with buttoned cuffs. Chest welt pocket and hip flap pocket. Inside pocket detail. Back vent at the hem. Front button",
-        "category": "womens clothing",
-        "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210915145926.png/format:webp",
-        "star": 3.5,
-        "quantity": 1,
-        "total": 246.9
       }
     ]
   ]

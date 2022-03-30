@@ -1,56 +1,57 @@
-
+<!-- top section -->
 <main class="page mt-5">
-    <section class="shopping-cart dark">
-      <div class="container">
-        <div class="block-heading">
-          <h2>Orders</h2>
-          <p>Best Products, High Quality, Fair Price.</p>
-        </div>
-        <div class="content">
-          <div class="row">
-              <div class="items">
-                  <!-- Empty Cart Section-->
-                <!-- <div class="container" *ngIf="orders.length == 0">
-                  <div class="row mt-5">
-                    <h4 class="col mt-5 mb-3 col-md-4 offset-md-4">You have no orders</h4>
-                    <button routerLink="/products" class="btn btn-primary col-md-4 offset-md-4 w-25">Shop Now</button>
-                  </div>
-                </div> -->
-           <!-- Empty Cart Section -->
-                <div class="product" *ngFor="let item of orders">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <img class="img-fluid mx-auto d-block image" src="{{ item.image }}">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="info">
-                        <div class="row">
-                          <div class="col-md-5 product-name">
-                            <div class="product-name">
-                              {{ item.title }}
-                              <div class="product-info">
-                                <div>Description: <span class="value">{{ item.description }}</span></div>
-  
-                              </div>
+  <section class="shopping-cart dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2>Orders</h2>
+        <p>Best Products, High Quality, Fair Price.</p>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="items">
+            <!-- looping orders -->
+            <div class="product" *ngFor="let item of orders">
+              <div class="row">
+                <div class="col-md-3">
+                  <img
+                    class="img-fluid mx-auto d-block image"
+                    src="{{ item.image }}"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="info">
+                    <div class="row">
+                      <div class="col-md-5 product-name">
+                        <div class="product-name">
+                          {{ item.title }}
+                          <div class="product-info">
+                            <div>
+                              Description:
+                              <span class="value">{{ item.description }}</span>
                             </div>
                           </div>
-                          <div class="col-md-3 quantity">
-                            <label for="quantity">Quantity:</label>
-                            <input id="quantity" type="number" value="1" class="form-control quantity-input">
-                          </div>
-                          <div class="col-md-3 price">
-                            <span>${{ item.price }}</span>
-                          </div>
                         </div>
+                      </div>
+                      <div class="col-md-3 quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input
+                          id="quantity"
+                          type="number"
+                          value="1"
+                          class="form-control quantity-input"
+                        />
+                      </div>
+                      <div class="col-md-3 price">
+                        <span>${{ item.price }}</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
-      
-    </section>
-  </main>
+      </div>
+    </div>
+  </section>
+</main>

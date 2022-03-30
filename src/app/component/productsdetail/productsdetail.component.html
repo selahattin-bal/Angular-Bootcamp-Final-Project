@@ -1,31 +1,53 @@
+<!-- looping all products -->
+<div
+  class="container"
+  *ngFor="let item of productsDetail"
+  style="margin-top: 70px"
+>
+  <!-- Checking id which coming from product page click event -->
+  <div class="card" *ngIf="item.id == currentId">
+    <div class="card-body">
+      <h3 class="card-title">{{ item.title }}</h3>
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-6">
+          <div class="white-box text-center">
+            <img src="{{ item.image }}" class="img-responsive" />
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-6">
+          <h4 class="box-title mt-5">Product description</h4>
+          <p>{{ item.description }}</p>
+          <h2 class="mt-5">
+            ${{ item.price }}<small class="text-success">(36%off)</small>
+          </h2>
+          <button class="btn btn-primary btn-rounded" (click)="addtocart(item)">
+            Add to Cart
+          </button>
 
-<div class="container"*ngFor="let item of productsDetail" style="margin-top: 70px;">
-    <div class="card"*ngIf="item.id==currentId">
-        <div class="card-body">
-            <h3 class="card-title">{{item.title}}</h3>
-            <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-6">
-                    <div class="white-box text-center"><img src="{{item.image}}" class="img-responsive" ></div>
-                </div>
-                <div class="col-lg-7 col-md-7 col-sm-6">
-                    <h4 class="box-title mt-5">Product description</h4>
-                    <p>{{item.description}}</p>
-                    <h2 class="mt-5">
-                        ${{item.price}}<small class="text-success">(36%off)</small>
-                    </h2>
-                    <button class="btn btn-primary btn-rounded"(click)="addtocart(item)">Add to Cart</button>
-                    
-                    <h3 class="box-title mt-5">Key Highlights</h3>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-success"></i>100% cotton</li>
-                        <li><i class="fa fa-check text-success"></i>Designed for comfort</li>
-                        <li><i class="fa fa-check text-success"></i>Perfect fit for everyone
-                        </li>
-                    </ul>
-                     <!-- 1 den 5 e kadar sıralı array gönderiliyor db den gelen değer küçükse dolu yıldız boşsa boş yıldız bu sayede puanı gösteriyor -->
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item" *ngFor="let star of star">
-                    <i [class]="item.star >= star ? 'fa fa-star text-success' : 'fa fa-star-o text-gray'"></i>
-                </li>
-            </ul>
-                </div>
+          <h3 class="box-title mt-5">Key Highlights</h3>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-check text-success"></i>100% cotton</li>
+            <li>
+              <i class="fa fa-check text-success"></i>Designed for comfort
+            </li>
+            <li>
+              <i class="fa fa-check text-success"></i>Perfect fit for everyone
+            </li>
+          </ul>
+          <!-- With help of star array adding 5 star according to data from server -->
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" *ngFor="let star of star">
+              <i
+                [class]="
+                  item.star >= star
+                    ? 'fa fa-star text-success'
+                    : 'fa fa-star-o text-gray'
+                "
+              ></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

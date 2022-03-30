@@ -15,6 +15,7 @@ export class CartService {
   constructor() { }
   
   getProducts(){
+// asobservable güvenlik asğlamak amaçlı kimse bu getproduct la ulaşanlar next yapamasın diye 
     return this.productList.asObservable();
   }
 

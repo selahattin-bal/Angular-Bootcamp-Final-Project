@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   public cartItems: any = [];
   public grandTotal !: number;
   
-  constructor(private cartService: CartService, private api:ApiService ) { }
+  constructor(private cartService: CartService, private api:ApiService ,private router:Router ) { }
 
 
 
@@ -33,6 +34,7 @@ export class CartComponent implements OnInit {
   checkout(){
     this.api.checkoutApi(this.cartItems).subscribe()
     this.cartService.removeAllCart()
+    this.router.navigate(["orders"])
   }
 }
 
