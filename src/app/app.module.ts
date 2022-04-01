@@ -16,6 +16,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { OrdersComponent } from './component/orders/orders.component';
 import { adminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ErrorHandleInterceptor } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,11 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
       provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
       multi:true
+    },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: ErrorHandleInterceptor, 
+      multi: true 
     }
   ],
   bootstrap: [AppComponent]
