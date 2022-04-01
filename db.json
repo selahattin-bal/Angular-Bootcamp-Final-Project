@@ -2,11 +2,10 @@
   "products": [
     {
       "id": 1,
-      "title": "Basic Denim Jacket",
+      "title": "Basic Denim Jacketsdfsdf",
       "price": 119.9,
       "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
       "category": "mens clothing",
-      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210924083519.png/format:webp",
       "star": 5
     },
     {
@@ -26,33 +25,6 @@
       "category": "womens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210915145926.png/format:webp",
       "star": 3.5
-    },
-    {
-      "id": 4,
-      "title": "White T-shirt",
-      "price": 734.9,
-      "description": "Round neck T-shirt with short sleeves. Contrast fabric appliqué detail.",
-      "category": "womens clothing",
-      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210913160731.png/format:webp",
-      "star": 5
-    },
-    {
-      "id": 5,
-      "title": "Sweatshirt",
-      "price": 168.9,
-      "description": "Long sleeve sweatshirt with a round neckline and ribbed trims.",
-      "category": "womens clothing",
-      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315140745.png/format:webp",
-      "star": 5
-    },
-    {
-      "id": 6,
-      "title": "Bomber Jacket",
-      "price": 326.9,
-      "description": "Leather jacket. High neck and long sleeves with ribbed cuffs. Welt pockets at the hip. Contrast embroidery on the front and back. Elastic hem. Snap buttons down the",
-      "category": "mens clothing",
-      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20211008180753.png/format:webp",
-      "star": 3.5
     }
   ],
   "signupUsers": [
@@ -60,7 +32,15 @@
       "username": "deneme",
       "email": "deneme@deneme",
       "password": "deneme",
-      "id": 1
+      "id": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    },
+    {
+      "username": "deneme",
+      "email": "deneme@deneme",
+      "password": "deneme",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "id": 2
     }
   ],
   "orders": [

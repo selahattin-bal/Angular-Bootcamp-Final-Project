@@ -19,7 +19,7 @@ signupForm!:FormGroup
     username:["", Validators.required],
     email:["", [Validators.required, Validators.email]],
     password:["",[Validators.required,Validators.minLength(6)]],
-   
+    token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
     })
   }
   // sending data with api.signUp 

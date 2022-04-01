@@ -12,7 +12,9 @@ export class HeaderComponent implements OnInit {
 
   public totalItem : number = 0;
   public searchTerm !: string;
-  public isLoggedIn:boolean=false
+  public isLoggedIn!
+  
+  :boolean
   constructor(private cartService : CartService,private apiservice:ApiService) { }
 
 
@@ -37,8 +39,10 @@ export class HeaderComponent implements OnInit {
 // clearing local storage for guard and isloggedin for logout button
 
   logout(){
-    localStorage.clear()
-   this.isLoggedIn=false
+   this.apiservice.logout()
+   this.apiservice.checkUser.subscribe((res) => {
+    this.isLoggedIn = res;
+  })
   }
   
   }

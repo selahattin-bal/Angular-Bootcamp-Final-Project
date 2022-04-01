@@ -13,7 +13,10 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): boolean | UrlTree {
 //If anyone logged in registered in local storage 
 //Also if they logout local storage will be deleted and this will return false
-      if(localStorage.getItem('user')){
+
+
+// BURDA GİREN KULLANICI TİPİNE GÖRE NAVİGATE İ BİR DENE
+      if(localStorage.getItem('token')){
         return true
       }
     else{

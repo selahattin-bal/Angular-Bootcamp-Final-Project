@@ -8,7 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ApiService {
   
-  checkUser = new BehaviorSubject<boolean>(false);
+  public checkUser = new BehaviorSubject<boolean>(false);
+  private apiURL:string="http://localhost:3000/"
 
   constructor(private http : HttpClient, private router:Router) {}
 
@@ -17,21 +18,22 @@ export class ApiService {
 
 //Http requests
 
+//Product requests
   getProductApi(){
-    return this.http.get<any>("http://localhost:3000/products")
+    return this.http.get<any>(`${this.apiURL}products`)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
   checkoutApi(itemList:any){
-    return this.http.post<any>("http://localhost:3000/orders",itemList) 
+    return this.http.post<any>(`${this.apiURL}orders`,itemList) 
    }
   
   
   
    ordersApi(){
-    return this.http.get<any>("http://localhost:3000/orders").pipe(map((res:any,i)=>{
+    return this.http.get<any>(`${this.apiURL}orders`).pipe(map((res:any,i)=>{
       return res[i]
     }))
    }
@@ -39,12 +41,48 @@ export class ApiService {
 
   //Signup and login API's
   signUp(signupForm:any){
-    return this.http.post<any>("http://localhost:3000/signupUsers",signupForm.value) 
+    return this.http.post<any>(`${this.apiURL}signupUsers`,signupForm.value) 
   }
 
   login(){
-    return this.http.get<any>("http://localhost:3000/signupUsers").pipe(map((res:any)=>{
+    return this.http.get<any>(`${this.apiURL}signupUsers`).pipe(map((res:any)=>{
       return res
+    }))
+  }
+
+  logout(){
+    this.checkUser.next(false)
+    localStorage.clear()
+  }
+
+  getToken(){
+   return localStorage.getItem("token")
+  }
+  
+  //ADMIN SECTION
+
+  Postadmin(data : any){
+    return this.http.post<any>(`${this.apiURL}products`,data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  Deleteadmin(id : number){
+    return this.http.delete<any>(`${this.apiURL}products/${id}`)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  Updateadmin(data : any){
+    return this.http.put<any>(`${this.apiURL}products/${data.id}`,data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  Getadmins(){
+    return this.http.get<any>(`${this.apiURL}products`)
+    .pipe(map((res:any)=>{
+      return res;
     }))
   }
 

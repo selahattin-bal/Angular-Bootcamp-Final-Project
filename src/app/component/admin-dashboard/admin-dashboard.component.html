@@ -1,0 +1,80 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;" class="navbar-brand">Angular Crud</h1>
+        <div class="d-flex">
+
+            <button  type="button" id="add-btn" class="btn btn-success" (click)="clickAddadmin()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+            <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">admin ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">İmage Url</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of adminData">
+
+            <td>{{row.id}}</td>
+            <td>{{row.title}}</td>
+            <td>{{row.price}}</td>
+            <td>{{row.description}}</td>
+            <td>{{row.category}}</td>
+            <td>{{row.image}}</td>
+            <td>
+                <button style="color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" (click)="onEdit(row)">Edit</button>
+                <button style="color: #fff;" class="btn btn-danger mx-3" (click)="deleteadminDetail(row)">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<!-- AÇILAN MENÜ -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Employee Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Title</label>
+                        <input type="text" formControlName="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Price</label>
+                        <input type="text" formControlName="price" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">description</label>
+                        <input type="email" formControlName="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Category</label>
+                        <input type="text" formControlName="category" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Image Url</label>
+                        <input type="text" formControlName="image" class="form-control" id="exampleInputPassword1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showAdd" (click)="postadminDetails()" class="btn btn-primary">Add</button>
+                <button type="button" *ngIf="showUpdate" (click)="editadminDetail()" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

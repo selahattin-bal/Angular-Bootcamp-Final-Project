@@ -6,7 +6,7 @@
     <div class="form-group">
       <label for="exampleInputUsername1" class="sr-only">Username</label>
       <input formControlName="username" type="username" class="form-control" id="exampleInputUsername1"
-        placeholder="Username" />
+        placeholder="Username" autocomplete="disabled" />
       <span class="text-danger" *ngIf="
           signupForm.controls['username'].dirty &&
           signupForm.hasError('required', 'username')
@@ -14,7 +14,7 @@
       <!-- Email Adress -->
       <label for="exampleInputEmail1" class="sr-only">Email address</label>
       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
-        placeholder="Email" />
+        placeholder="Email" autocomplete="disabled"/>
       <span class="text-danger" *ngIf="
           signupForm.controls['email'].dirty &&
           signupForm.hasError('required', 'email')

@@ -17,11 +17,11 @@ public loginForm!: FormGroup
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
       //validators for login
-      email:["",Validators.required],
-      password:["",Validators.required]
+      email:["deneme@deneme",Validators.required],
+      password:["deneme",Validators.required]
     })
   }
-
+// BU KISMI APİ YA AL 
   login(){
     //getting data from json and checking input matching
     this.api.login().subscribe(res=>{
@@ -35,7 +35,7 @@ public loginForm!: FormGroup
        this.router.navigate(["products"])
        this.api.checkUser.next(true);
        // saving data in local storage
-      localStorage.setItem('user', JSON.stringify(res))
+      localStorage.setItem('token', JSON.stringify(res[0].token))
      }
        else{
          alert("User not found")
