@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   constructor(private router:Router){}
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean | UrlTree {
+    state: RouterStateSnapshot): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree{
 //If anyone logged in registered in local storage 
 //Also if they logout local storage will be deleted and this will return false
 
@@ -21,6 +21,7 @@ export class AuthGuard implements CanActivate {
       }
     else{
       this.router.navigate([''])
+      alert("You can not access without login")
       return false
     }
   }

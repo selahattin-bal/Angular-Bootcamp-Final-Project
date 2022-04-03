@@ -12,17 +12,15 @@ export class HeaderComponent implements OnInit {
 
   public totalItem : number = 0;
   public searchTerm !: string;
-  public isLoggedIn!
-  
-  :boolean
+  public user:any
   constructor(private cartService : CartService,private apiservice:ApiService) { }
 
 
   
   ngOnInit(): void {
     // checking user for logout template
-    this.apiservice.checkUser.subscribe((res) => {
-      this.isLoggedIn = res;
+    this.apiservice.user.subscribe((res) => {
+      this.user = res;
     })
     //taking data for template of total cart item number
     this.cartService.getProducts()
@@ -39,10 +37,8 @@ export class HeaderComponent implements OnInit {
 // clearing local storage for guard and isloggedin for logout button
 
   logout(){
-   this.apiservice.logout()
-   this.apiservice.checkUser.subscribe((res) => {
-    this.isLoggedIn = res;
-  })
+   this.apiservice.user.next("")
+   localStorage.clear()
   }
   
   }

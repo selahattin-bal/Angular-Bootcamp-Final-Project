@@ -2,11 +2,11 @@
   "products": [
     {
       "id": 1,
-      "title": "Basic Denim Jacketsdfsdf",
+      "title": "Basic Denim Jacket",
       "price": 119.9,
       "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
       "category": "mens clothing",
-      "star": 5
+      "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp"
     },
     {
       "id": 2,
@@ -33,13 +33,15 @@
       "email": "deneme@deneme",
       "password": "deneme",
       "id": 1,
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "role": "user"
     },
     {
-      "username": "deneme",
-      "email": "deneme@deneme",
-      "password": "deneme",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "username": "admin",
+      "email": "admin@admin",
+      "password": "123456",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssfdgdf",
+      "role": "admin",
       "id": 2
     }
   ],

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <!-- logo some links -->
   <i style="font-size: 30px; color: white" class="fa-solid fa-meteor m-2"></i>
   <a class="navbar-brand" routerLink="products">Sirius</a>
@@ -24,6 +24,7 @@
         <a class="nav-link" routerLink="orders">Orders</a>
       </li>
     </ul>
+    
 <!-- search bar -->
     <form class="form-inline mt-2 mt-md-0 w-50 mx-auto">
       <input
@@ -36,20 +37,26 @@
         (keyup)="search($event)"
       />
     </form>
+   
   </div>
-  <!-- logout button -->
+
+  
+
+  <!-- logout-login button -->
+  <div>
+   
   <button
-    *ngIf="isLoggedIn"
+    *ngIf="user"
     (click)="logout()"
     routerLink="login"
     class="btn"
     style="color: white"
   >
-    Logout
+  <span style="color: white;padding-top: 10px;">{{user.username}}</span>  Logout
   </button>
 
   <button
-    *ngIf="!isLoggedIn"
+    *ngIf="!user"
     routerLink="login"
     class="btn"
     style="color: white"
@@ -58,7 +65,7 @@
   </button>
 
   <button
-    *ngIf="!isLoggedIn"
+    *ngIf="!user"
     routerLink="signup"
     class="btn"
     style="color: white"
@@ -66,10 +73,13 @@
     Signup
   </button>
   <!--cart with counter -->
+
   <button routerLink="cart" class="btn" style="color: white">
     <i style="font-size: 25px" class="fa-solid fa-cart-shopping"></i>
     <div style="font-size: 10px" class="badge bg-success">
       {{ totalItem }}
     </div>
   </button>
-</nav>
+  </div>
+</div>
+

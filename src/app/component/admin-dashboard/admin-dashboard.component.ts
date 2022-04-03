@@ -25,8 +25,8 @@ export class adminDashboardComponent implements OnInit {
       title: ['',Validators.required],
       price: ['',Validators.required],
       description: ['',Validators.required],
-      category: [''],
-      image: ['']
+      category: ['',Validators.required],
+      image: ['',Validators.required]
       
     })
     this.gettingData()
@@ -97,9 +97,9 @@ export class adminDashboardComponent implements OnInit {
     })
    }
   }
-
+ 
   canExit():boolean{
-    if(this.formValue.dirty && !this.formValue.pristine){
+    if(this.formValue.pristine && this.formValue.touched||this.formValue.touched && this.formValue.invalid){
       if(confirm("There are some unsaved changes")){
         return true
       }

@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   
-  public checkUser = new BehaviorSubject<boolean>(false);
+  
+  public user=new BehaviorSubject<any>("")
   private apiURL:string="http://localhost:3000/"
 
   constructor(private http : HttpClient, private router:Router) {}
@@ -43,17 +44,11 @@ export class ApiService {
   signUp(signupForm:any){
     return this.http.post<any>(`${this.apiURL}signupUsers`,signupForm.value) 
   }
+  login(email:any,password:any) {
+    return this.http.get(`${this.apiURL}signupUsers/?email=${email}&password=${password}`)
+}
 
-  login(){
-    return this.http.get<any>(`${this.apiURL}signupUsers`).pipe(map((res:any)=>{
-      return res
-    }))
-  }
 
-  logout(){
-    this.checkUser.next(false)
-    localStorage.clear()
-  }
 
   getToken(){
    return localStorage.getItem("token")

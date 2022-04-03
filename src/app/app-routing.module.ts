@@ -7,6 +7,7 @@ import { OrdersComponent } from './component/orders/orders.component';
 import { ProductsComponent } from './component/products/products.component';
 import { ProductsdetailComponent } from './component/productsdetail/productsdetail.component';
 import { SignupComponent } from './component/signup/signup.component';
+import { AdminGuard } from './services/admin.guard';
 import { AuthGuard } from './services/auth.guard';
 import { UnsavedGuard } from './services/unsaved.guard';
 
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:adminDashboardComponent,canDeactivate:[UnsavedGuard]},
+  {path:'dashboard',component:adminDashboardComponent,canActivate:[AdminGuard],canDeactivate:[UnsavedGuard]},
   //Wildcard invalid routes and guard will be redirected to here 
   {path:'**', redirectTo:'login',pathMatch:'full'}
 ];
