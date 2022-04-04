@@ -55,7 +55,7 @@ export class ApiService {
   }
   
   //ADMIN SECTION
-
+// HEPSİ APİ İSTEĞİYLE YAPILMALI ÇÜNKÜ SERVER DA DEĞİŞMELİ 
   Postadmin(data : any){
     return this.http.post<any>(`${this.apiURL}products`,data)
     .pipe(map((res:any)=>{

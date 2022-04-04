@@ -84,14 +84,19 @@
                             <div class="collapse show" id="collapse_aside_brands">
                                 <div class="card-body">
                                     <label class="form-check mb-2">
-                                        <input class="form-check-input" type="checkbox" value="" checked="" />
-                                        <span class="form-check-label"> Mercedes </span>
+                                        <input class="form-check-input" type="checkbox" value="zara"  (change)="brandFilter($event)" />
+                                        <span class="form-check-label"> Zara </span>
+                                    </label> 
+                                    <label class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" value="koton"  (change)="brandFilter($event)" />
+                                        <span class="form-check-label"> Koton </span>
                                     </label>
                                     <!-- form-check end.// -->
                                 </div>
                                 <!-- card-body .// -->
                             </div>
                             <!-- collapse.// -->
+                            
                         </article>
                         <!-- temizle butonu eklenecek eventle tetiklenecek pricefilter -->
                         <article class="filter-group">
@@ -201,7 +206,7 @@
                 <main class="col-lg-9">
                     <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
                         <strong class="d-block py-2">
-                            {{ filterCategory.length }} Items found
+                            {{ filteredProducts.length }} Items found
                         </strong>
                         <div class="ms-auto">
                             <div class="btn-group">
@@ -215,13 +220,16 @@
                             <!-- btn-group end.// -->
                         </div>
                     </header>
-
+                    <div *ngIf=" filteredProducts.length === 0">
+                        <span><strong>There are no products that match your search, try something else.</strong> </span>
+                      </div>
                     <!-- ========= content items ========= -->
                     <div class="row" *ngIf="viewGrid">
                         <!-- products -->
                         <ng-container *ngFor="
-                let item of filterCategory | filterHandler: searchKey:'title'
+                let item of  filteredProducts| filterHandler: searchKey:'title'
               ">
+              
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <figure class="card card-product-grid">
                                     <div class="img-wrap">
@@ -257,9 +265,13 @@
                     <!-- row end.// -->
                     <div class="row" *ngIf="!viewGrid">
                         <!-- products -->
+                        <div *ngIf=" filteredProducts.length === 0">
+                            <span><strong>There are no products that match your search, try something else.</strong> </span>
+                          </div>
                         <ng-container *ngFor="
-                let item of filterCategory | filterHandler: searchKey:'title'
+                let item of  filteredProducts| filterHandler: searchKey:'title'
               ">
+             
               <article class="card card-product-list">
                 <div class="row g-0">
                   <aside class="col-xl-3 col-md-4">
@@ -272,9 +284,9 @@
                       <div class="rating-wrap mb-2">
                         <ul class="rating-stars">
                           <li class="stars-active" style="width: 90%;">
-                            <img src="images/misc/stars-active.svg" alt="">
+                            <img src="" alt="">
                           </li>
-                          <li> <img src="images/misc/starts-disable.svg" alt=""> </li>
+                          <li> <img src="" alt=""> </li>
                         </ul>
                         <span class="label-rating text-warning">4.5</span>
                       </div> <!-- rating-wrap.// -->

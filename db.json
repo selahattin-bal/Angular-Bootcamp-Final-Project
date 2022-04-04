@@ -4,6 +4,7 @@
       "id": 1,
       "title": "Basic Denim Jacket",
       "price": 119.9,
+      "brand":"koton",
       "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
       "category": "mens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp"
@@ -12,6 +13,7 @@
       "id": 2,
       "title": "Trouser",
       "price": 79.9,
+      "brand":"zara",
       "description": "Straight-fit trousers featuring side in-seam pockets at the hip and welt pockets at the back. Contrast side stripe on the legs. Side slit at the hem. Hidden metal hook fastening at",
       "category": "mens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
@@ -21,6 +23,7 @@
       "id": 3,
       "title": "Blazer",
       "price": 246.9,
+      "brand":"defacto",
       "description": "Blazer with a notched lapel collar. Long sleeves with buttoned cuffs. Chest welt pocket and hip flap pocket. Inside pocket detail. Back vent at the hem. Front button",
       "category": "womens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210915145926.png/format:webp",
