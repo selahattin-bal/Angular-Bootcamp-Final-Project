@@ -83,14 +83,12 @@
                             </header>
                             <div class="collapse show" id="collapse_aside_brands">
                                 <div class="card-body">
+                                    <ng-container *ngFor="let item of uniqueBrands" >
                                     <label class="form-check mb-2">
-                                        <input class="form-check-input" type="checkbox" value="zara"  (change)="brandFilter($event)" />
-                                        <span class="form-check-label"> Zara </span>
+                                        <input class="form-check-input" type="checkbox" value="{{item}}"  (change)="brandFilter($event)" />
+                                        <span class="form-check-label"> {{item}} </span>
                                     </label> 
-                                    <label class="form-check mb-2">
-                                        <input class="form-check-input" type="checkbox" value="koton"  (change)="brandFilter($event)" />
-                                        <span class="form-check-label"> Koton </span>
-                                    </label>
+                                </ng-container>
                                     <!-- form-check end.// -->
                                 </div>
                                 <!-- card-body .// -->
@@ -138,61 +136,51 @@
 
                         <article class="filter-group">
                             <header class="card-header">
-                                <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
-                                    <i class="icon-control fa fa-chevron-down"></i> Size
-                                </a>
-                            </header>
-                            <div class="collapse show" id="collapse_aside3">
-                                <div class="card-body">
-                                    <label class="checkbox-btn">
-                                        <input type="checkbox" />
-                                        <span class="btn btn-light"> S </span>
-                                    </label>
-
-                                    <label class="checkbox-btn">
-                                        <input type="checkbox" />
-                                        <span class="btn btn-light"> M </span>
-                                    </label>
-
-                                    <label class="checkbox-btn">
-                                        <input type="checkbox" />
-                                        <span class="btn btn-light"> L </span>
-                                    </label>
-
-                                    <label class="checkbox-btn">
-                                        <input type="checkbox" />
-                                        <span class="btn btn-light"> XL </span>
-                                    </label>
-                                </div>
-                                <!-- card-body.// -->
-                            </div>
-                            <!-- collapse.// -->
-                        </article>
-                        <!-- filter-group // -->
-
-                        <article class="filter-group">
-                            <header class="card-header">
                                 <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside4">
                                     <i class="icon-control fa fa-chevron-down"></i> Ratings
                                 </a>
                             </header>
                             <div class="collapse show" id="collapse_aside4">
-                                <div class="card-body">
-                                    <label class="form-check mb-2">
-                                        <input class="form-check-input" type="checkbox" value="" checked="" />
-                                        <span class="form-check-label">
+                                <form class="card-body" >
+
+                                    <div class="form-check" >
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked value="1" (change)="starFilter($event)">
+                                       <span class="form-check-label">
                                             <ul class="rating-stars">
-                                                <li class="stars-active" style="width: 100%">
-                                                    <img src="images/misc/stars-active.svg" alt="" />
-                                                </li>
-                                                <li>
-                                                    <img src="images/misc/starts-disable.svg" alt="" />
-                                                </li>
+                                                <li>  <i class="fa fa-star text-dark"></i>
+                                                    All Items</li>
                                             </ul>
                                         </span>
-                                    </label>
+                                      </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="2"(change)="starFilter($event)">
+                                       <span class="form-check-label">
+                                            <ul class="rating-stars">
+                                                <li>  <i class="fa fa-star text-dark"></i>
+                                                    <strong>4+</strong>Star</li>
+                                            </ul>
+                                        </span>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="3"(change)="starFilter($event)">
+                                        <span class="form-check-label">
+                                            <ul class="rating-stars">
+                                                <li>  <i class="fa fa-star text-dark"></i>
+                                                    <strong>3-3.9+</strong>Star</li>
+                                            </ul>
+                                        </span>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="4" (change)="starFilter($event)">
+                                        <span class="form-check-label">
+                                            <ul class="rating-stars">
+                                                <li>  <i class="fa fa-star text-dark"></i>
+                                                    <strong>0-2.9+</strong>Star</li>
+                                            </ul>
+                                        </span>
+                                    </div>
                                     <!-- form-check end.// -->
-                                </div>
+                                </form>
                                 <!-- card-body.// -->
                             </div>
                             <!-- collapse.// -->

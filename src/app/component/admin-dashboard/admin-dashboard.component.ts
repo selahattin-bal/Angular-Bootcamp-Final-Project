@@ -26,8 +26,9 @@ export class adminDashboardComponent implements OnInit {
       price: ['',Validators.required],
       description: ['',Validators.required],
       category: ['',Validators.required],
-      image: ['',Validators.required]
-      
+      image: ['',Validators.required],
+      brand: ['',Validators.required],
+      star:[0]
     })
     this.gettingData()
   }
@@ -52,6 +53,8 @@ export class adminDashboardComponent implements OnInit {
      this.adminObj.description = this.formValue.value.description;
      this.adminObj.category = this.formValue.value.category;
      this.adminObj.image = this.formValue.value.image;
+     this.adminObj.brand = this.formValue.value.brand;
+     this.adminObj.star = this.formValue.value.star;
     this.api.Postadmin(this.adminObj)
       .subscribe(res => {
         console.log(res);
@@ -67,6 +70,8 @@ export class adminDashboardComponent implements OnInit {
      this.adminObj.description = this.formValue.value.description;
      this.adminObj.category = this.formValue.value.category;
      this.adminObj.image = this.formValue.value.image;
+     this.adminObj.brand = this.formValue.value.brand;
+     this.adminObj.star = this.formValue.value.star;
     this.api.Updateadmin(this.adminObj)
     .subscribe(res=>{
       alert("Updated Successfully")
