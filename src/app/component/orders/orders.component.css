@@ -71,7 +71,7 @@
 
 .shopping-cart .items .product .info .price{
 	margin-top: 15px;
-    font-weight: bold;
+
     font-size: 22px;
  }
 
@@ -117,7 +117,7 @@
 	}
 
 	.shopping-cart .items .product .info .price {
-		font-weight: bold;
+	
 		font-size: 22px;
 		top: 17px; 
 	}

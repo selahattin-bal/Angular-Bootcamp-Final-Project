@@ -16,6 +16,7 @@ export class CartService {
   
   getProducts(){
 // asobservable güvenlik asğlamak amaçlı kimse bu getproduct la ulaşanlar next yapamasın diye 
+//BÜTÜN SİSTEM PRODUCTLİST ÜZERİNDE Çalışıyor cart item list aracı 
     return this.productList.asObservable();
   }
 

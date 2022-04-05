@@ -16,7 +16,9 @@ public orders:any=[]
     this.api.ordersApi().subscribe(
       res=>{
       this.orders=res  
+      console.log(this.orders)
       }
+     
       )
 
 }

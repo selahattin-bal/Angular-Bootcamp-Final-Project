@@ -7,10 +7,13 @@
         <p>Best Products, High Quality, Fair Price.</p>
       </div>
       <div class="content">
+        
         <div class="row">
-          <div class="items">
+          <div class="items ">
             <!-- looping orders -->
-            <div class="product" *ngFor="let item of orders">
+            <div class="pt-3"style="margin-left:30px">Order Number:<strong> {{orders[0].ordernumber}}</strong> </div>
+            <hr>
+            <div class="product" *ngFor="let item of orders[1].order">
               <div class="row">
                 <div class="col-md-3">
                   <img
@@ -33,16 +36,10 @@
                         </div>
                       </div>
                       <div class="col-md-3 quantity">
-                        <label for="quantity">Quantity:</label>
-                        <input
-                          id="quantity"
-                          type="number"
-                          value="1"
-                          class="form-control quantity-input"
-                        />
+                        <span>Quantity:{{ item.quantity }}</span>
                       </div>
                       <div class="col-md-3 price">
-                        <span>${{ item.price }}</span>
+                        <span>Price:${{ item.total }}</span>
                       </div>
                     </div>
                   </div>

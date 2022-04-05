@@ -4,37 +4,59 @@
       "id": 1,
       "title": "Basic Denim Jacket",
       "price": 119.9,
-      "brand":"Koton",
+      "brand": "Koton",
       "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
       "category": "mens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
-      "star": 1
+      "star": 1,
+      "comment": [
+        {
+          "username": "Jonh Doe",
+          "comment": "To an old man a cup of coffee is like the door post of an old house — it sustains and strengthens him."
+        },
+        {
+          "username": "Sarah Oprah",
+          "comment": "Coffee makes us severe, and grave, and philosophical."
+        },
+        {
+          "username": "Barack Obama",
+          "comment": "I orchestrate my mornings to the tune of coffee."
+        }
+      ]
     },
     {
       "id": 2,
       "title": "Trouser",
       "price": 79.9,
-      "brand":"Zara",
+      "brand": "Zara",
       "description": "Straight-fit trousers featuring side in-seam pockets at the hip and welt pockets at the back. Contrast side stripe on the legs. Side slit at the hem. Hidden metal hook fastening at",
       "category": "mens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
-      "star": 4
+      "star": 4,
+      "comment": {
+        "username": "Martin Doe",
+        "comment": "People say money can’t buy happiness. They Lie. Money buys Coffee, Coffee makes Me Happy!"
+      }
     },
     {
       "id": 3,
       "title": "Blazer",
       "price": 246.9,
-      "brand":"Defacto",
+      "brand": "Defacto",
       "description": "Blazer with a notched lapel collar. Long sleeves with buttoned cuffs. Chest welt pocket and hip flap pocket. Inside pocket detail. Back vent at the hem. Front button",
       "category": "womens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210915145926.png/format:webp",
-      "star": 3.5
+      "star": 3.5,
+      "comment": {
+        "username": "Alex Doe",
+        "comment": "Good Coffee Cheaper than Prozac!"
+      }
     },
     {
       "id": 4,
       "title": "Trouser",
       "price": 79.9,
-      "brand":"Zara",
+      "brand": "Zara",
       "description": "Straight-fit trousers featuring side in-seam pockets at the hip and welt pockets at the back. Contrast side stripe on the legs. Side slit at the hem. Hidden metal hook fastening at",
       "category": "mens clothing",
       "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
@@ -60,29 +82,5 @@
     }
   ],
   "orders": [
-    [
-      {
-        "id": 1,
-        "title": "Basic Denim Jacket",
-        "price": 119.9,
-        "description": " Collared denim jacket featuring long sleeves with buttoned cuffs. Chest flap pockets and hip welt pockets. Faded effect. Button-up front.",
-        "category": "mens clothing",
-        "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20210924083519.png/format:webp",
-        "star": 5,
-        "quantity": 1,
-        "total": 119.9
-      },
-      {
-        "id": 2,
-        "title": "Trouser",
-        "price": 79.9,
-        "description": "Straight-fit trousers featuring side in-seam pockets at the hip and welt pockets at the back. Contrast side stripe on the legs. Side slit at the hem. Hidden metal hook fastening at",
-        "category": "mens clothing",
-        "image": "https://images.hepsiburada.net/banners/s/0/278-365/banner_20220315175231.png/format:webp",
-        "star": 4,
-        "quantity": 1,
-        "total": 79.9
-      }
-    ]
   ]
 }

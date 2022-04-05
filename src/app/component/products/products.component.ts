@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   //TEMPLATE DEN ERİŞMEK İÇİN PUBLİC OLACAK
   public star: number[] = [1, 2, 3, 4, 5];
 
-  public productList: any;
+  public products: any;
   public filteredProducts: any
   public searchKey: string = "";
   public viewGrid = true
@@ -27,20 +27,18 @@ export class ProductsComponent implements OnInit {
     //getting product from server
     this.api.getProductApi()
       .subscribe(res => {
-        this.productList = res;
+        this.products = res;
         this.filteredProducts = res;
-        this.productList.forEach((a: any) => {
-          Object.assign(a, { quantity: 1, total: a.price });
-        });
-        console.log(this.productList)
+       
+       
         //unique brandleri bulma burada yapıldı serverdan gelen değişimlerde direk olarak tepki vermesi amaçlı yani dinamik
-       this.productList.forEach((element:any) => {
+       this.products.forEach((element:any) => {
             return this.uniqueBrands.push(element.brand) 
           })
          this.uniqueBrands= this.uniqueBrands.filter((item:any, 
             index:any) => this.uniqueBrands.indexOf(item) === index);
     
-          console.log(this.uniqueBrands)
+          
       });
     // data transfer for search handling
     this.cartService.search.subscribe((val: any) => {
@@ -61,7 +59,7 @@ export class ProductsComponent implements OnInit {
 
 
   categoryFilterHandler(category: string) {
-    this.filteredProducts = this.productList
+    this.filteredProducts = this.products
       .filter((product: any) => {
         if (product.category == category || category == '') {
           return product;
@@ -82,7 +80,7 @@ export class ProductsComponent implements OnInit {
 
   //REFACTOR SWTİCH CASE
   priceFilter(min: any, max: any) {
-    this.filteredProducts = this.productList
+    this.filteredProducts = this.products
       .filter((product: any) => {
         if (max === "") {
           if (Number(min) <= Number(product.price)) {
@@ -120,7 +118,7 @@ export class ProductsComponent implements OnInit {
       this.tempBrands.push(brand.target.value)
       this.selectedBrands = []
       for (let i = 0; i < this.tempBrands.length; i++) {
-        this.selectedBrands.push(this.productList.filter((element: any) => element.brand == this.tempBrands[i]))
+        this.selectedBrands.push(this.products.filter((element: any) => element.brand == this.tempBrands[i]))
       }
     }
     else {
@@ -137,7 +135,7 @@ export class ProductsComponent implements OnInit {
     this.filteredProducts = this.selectedBrands.flat()
     console.log(this.filteredProducts)
     if (this.selectedBrands.length === 0) {
-      this.filteredProducts = this.productList
+      this.filteredProducts = this.products
     }
   }
 
@@ -146,7 +144,7 @@ export class ProductsComponent implements OnInit {
   starFilter(star:any){
 
     if(star.target.value==1)
-    this.filteredProducts = this.productList
+    this.filteredProducts = this.products
     .filter((product: any) => {
       if (0<=product.star&&product.star<=5 ) {
         return product;
@@ -154,21 +152,21 @@ export class ProductsComponent implements OnInit {
     })
 
     if(star.target.value==2)
-    this.filteredProducts = this.productList
+    this.filteredProducts = this.products
     .filter((product: any) => {
       if (4<=product.star ) {
         return product;
       }
     })
     if(star.target.value==3)
-    this.filteredProducts = this.productList
+    this.filteredProducts = this.products
     .filter((product: any) => {
       if (3<=product.star&&product.star<4 ) {
         return product;
       }
     })
     if(star.target.value==4)
-    this.filteredProducts = this.productList
+    this.filteredProducts = this.products
     .filter((product: any) => {
       if (0<=product.star&&product.star<3 ) {
         return product;
