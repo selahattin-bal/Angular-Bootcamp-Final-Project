@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
@@ -40,14 +40,18 @@ export class ProductsComponent implements OnInit {
     
           
       });
-    // data transfer for search handling
-    this.cartService.search.subscribe((val: any) => {
-      this.searchKey = val;
-    })
-
+    // data transfer for search handling ( filter in subcribe not working so pipe is used)
+    
+    this.cartService.getSearch().subscribe((val: any) => {
+      this.searchKey = val
+     })
+   
 
   }
 
+  
+
+  
   addtocart(item: any) {
     this.cartService.addtoCart(item);
   }
@@ -66,7 +70,7 @@ export class ProductsComponent implements OnInit {
         }
       })
   }
-
+  
 
   viewHandler(category: string) {
     if (category === "grid") {

@@ -20,7 +20,7 @@ export class adminDashboardComponent implements OnInit {
 
   constructor(private api: ApiService,private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.formValue = this.formBuilder.group({
       title: ['',Validators.required],
       price: ['',Validators.required],
@@ -28,7 +28,8 @@ export class adminDashboardComponent implements OnInit {
       category: ['',Validators.required],
       image: ['',Validators.required],
       brand: ['',Validators.required],
-      star:[0]
+      star:[0],
+      comment:[]
     })
     this.gettingData()
   }
@@ -42,7 +43,7 @@ export class adminDashboardComponent implements OnInit {
   }
 
 
-  clickAddadmin(){
+  addProduct(){
     this.formValue.reset();
     this.showAdd = true;
     this.showUpdate = false;
@@ -55,6 +56,7 @@ export class adminDashboardComponent implements OnInit {
      this.adminObj.image = this.formValue.value.image;
      this.adminObj.brand = this.formValue.value.brand;
      this.adminObj.star = this.formValue.value.star;
+     this.adminObj.comment = this.formValue.value.comment;
     this.api.Postadmin(this.adminObj)
       .subscribe(res => {
         console.log(res);
@@ -72,6 +74,7 @@ export class adminDashboardComponent implements OnInit {
      this.adminObj.image = this.formValue.value.image;
      this.adminObj.brand = this.formValue.value.brand;
      this.adminObj.star = this.formValue.value.star;
+     this.adminObj.comment = this.formValue.value.comment;
     this.api.Updateadmin(this.adminObj)
     .subscribe(res=>{
       alert("Updated Successfully")
@@ -88,6 +91,7 @@ export class adminDashboardComponent implements OnInit {
     this.formValue.controls['description'].setValue(row.description);
     this.formValue.controls['category'].setValue(row.category);
     this.formValue.controls['image'].setValue(row.image);
+    this.formValue.controls['brand'].setValue(row.brand);
     this.showUpdate = true;
     this.showAdd = false;
   }

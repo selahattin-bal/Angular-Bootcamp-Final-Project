@@ -9,8 +9,8 @@ export class CartService {
 //Bey Behavior subject you can give initial value , you can next another observable anytime , you can emmit data and observe it
 
   public cartItemList : any =[]
-  public productList = new BehaviorSubject<any>([]);
-  public search = new BehaviorSubject<string>("");
+  private productList = new BehaviorSubject<any>([]);
+  public search = new BehaviorSubject<any>("");
   
   constructor() { }
   
@@ -19,7 +19,9 @@ export class CartService {
 //BÜTÜN SİSTEM PRODUCTLİST ÜZERİNDE Çalışıyor cart item list aracı 
     return this.productList.asObservable();
   }
-
+  getSearch() { 
+    return this.search.asObservable();
+ }
   setProduct(product : any){
     this.cartItemList.push(...product);
     this.productList.next(product);

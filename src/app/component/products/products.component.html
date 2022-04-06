@@ -1,30 +1,14 @@
 <!-- Category section -->
-
 <body data-new-gr-c-s-check-loaded="14.1055.0" data-gr-ext-installed="">
+
+
+
     <div style="
-      margin-top: 70px;
+      margin-top: 45px;
       background-color: #2f4353;
       background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
     ">
-        <div style="background-color: white">
-            <div class="container d-flex">
-                <div class="item">
-                    <button style="border: none; background: none" (click)="categoryFilterHandler('')">
-                        <h6>All Clothing</h6>
-                    </button>
-                </div>
-                <div class="item">
-                    <button style="border: none; background: none" (click)="categoryFilterHandler('mens clothing')">
-                        <h6>Men's Clothing</h6>
-                    </button>
-                </div>
-                <div class="item">
-                    <button style="border: none; background: none" (click)="categoryFilterHandler('womens clothing')">
-                        <h6>Women's Clothing</h6>
-                    </button>
-                </div>
-            </div>
-        </div>
+     
 
         <!-- Products-->
 
@@ -48,22 +32,22 @@
                                 <div class="card-body">
                                     <ul class="list-menu">
                                         <li>
-                                            <button style="border: none; background: none"
+                                            <button style="border: none; background: none" class="category"
                                                 (click)="categoryFilterHandler('')">
-                                                <h6>All Clothing</h6>
+                                                <h6>All Products</h6>
                                             </button>
                                         </li>
 
                                         <li>
-                                            <button style="border: none; background: none"
-                                                (click)="categoryFilterHandler('mens clothing')">
-                                                <h6>Men's Clothing</h6>
+                                            <button style="border: none; background: none"class="category"
+                                                (click)="categoryFilterHandler('coffee')">
+                                                <h6>Coffee</h6>
                                             </button>
                                         </li>
                                         <li>
-                                            <button style="border: none; background: none"
-                                                (click)="categoryFilterHandler('womens clothing')">
-                                                <h6>Women's Clothing</h6>
+                                            <button style="border: none; background: none"class="category"
+                                                (click)="categoryFilterHandler('coffeeaccessories')">
+                                                <h6>Coffee Accessories</h6>
                                             </button>
                                         </li>
                                     </ul>
@@ -73,7 +57,6 @@
                             <!-- collapse.// -->
                         </article>
                         <!-- filter-group // -->
-
                         <article class="filter-group">
                             <header class="card-header">
                                 <a href="#" class="title" data-bs-toggle="collapse"
@@ -192,22 +175,45 @@
                 </aside>
                 <!-- col .// -->
                 <main class="col-lg-9">
+                    <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="https://img.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg?t=st=1649253188~exp=1649253788~hmac=0e5228440c23bfc4fde6b914d9826fbd350242abc980c3562b77cc011da7b2e5&w=1380" class="d-block w-100" height="400px" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://cdn.pixabay.com/photo/2016/11/29/12/54/cafe-1869656_960_720.jpg" class="d-block w-100" height="400px"alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://st3.depositphotos.com/9881890/14561/i/450/depositphotos_145612499-stock-photo-cups-of-fresh-made-coffee.jpg" class="d-block w-100" height="400px"alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
                     <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-                        <strong class="d-block py-2">
-                            {{ filteredProducts.length }} Items found
+                        <strong class="d-block py-2">Result:
+                            {{ (filteredProducts| filterHandler: searchKey:'title').length }} items found
                         </strong>
                         <div class="ms-auto">
-                            <div class="btn-group">
-                                <a  class="btn btn-light" data-bs-toggle="tooltip" title="List view"(click)="viewHandler('list')">
-                                    <i class="fa fa-bars"></i>
-                                </a>
-                                <a  class="btn btn-light active" data-bs-toggle="tooltip" title="Grid view"(click)="viewHandler('grid')">
-                                    <i class="fa fa-th"></i>
-                                </a>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"  (click)="viewHandler('list')">
+                                <label class="btn btn-success" for="option1"><i class="fa fa-bars"></i></label>
+
+                                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" checked (click)="viewHandler('grid')">
+                                <label class="btn btn-success " for="option2"><i class="fa fa-th"></i></label>
+
+                               
                             </div>
                             <!-- btn-group end.// -->
                         </div>
                     </header>
+                    
                     <div *ngIf=" filteredProducts.length === 0">
                         <span><strong>There are no products that match your search, try something else.</strong> </span>
                       </div>
@@ -215,12 +221,12 @@
                     <div class="row" *ngIf="viewGrid">
                         <!-- products -->
                         <ng-container *ngFor="
-                let item of  filteredProducts| filterHandler: searchKey:'title'
-              ">
+                    let item of  filteredProducts| filterHandler: searchKey:'title'
+                            ">
               
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <figure class="card card-product-grid">
-                                    <div class="img-wrap">
+                                    <div class="img-wrap pt-2">
                                         <img src="{{ item.image }}" />
                                     </div>
                                     <figcaption class="info-wrap border-top">
@@ -228,9 +234,20 @@
                                             <strong class="price"> ${{ item.price }}</strong>
                                             <del class="price-old">$170.00</del>
                                         </div>
+                                        <ul class="list-group list-group-horizontal title" >
+                                            <li class="list-group-item" *ngFor="let star of star"style="width: 50px;">
+                                              <i
+                                                [class]="
+                                                  item.star >= star
+                                                    ? 'fa fa-star text-success'
+                                                    : 'fa fa-star-o text-gray'
+                                                "
+                                              ></i>
+                                            </li>
+                                          </ul>
                                         <!-- price-wrap.// -->
-                                        <button style="border: none; background: none" (click)="onSelect(item)">
-                                            {{ item.title }}
+                                        <button style="border: none; background: none;text-align: left;" (click)="onSelect(item)" class="productid">
+                                          <span >{{item.brand}} {{ item.title }}</span>
                                         </button>
                                         <p class="title mb-2" style="
                         white-space: nowrap;
@@ -267,7 +284,7 @@
                   </aside> <!-- col.// -->
                   <div class="col-xl-6 col-md-5 col-sm-7">
                     <div class="card-body">
-                      <a href="#" class="title h5">{{ item.title }} </a>
+                      <a href="#" class="title h5">{{item.brand}} {{ item.title }} </a>
           
                       <div class="rating-wrap mb-2">
                         <ul class="rating-stars">
@@ -276,7 +293,17 @@
                           </li>
                           <li> <img src="" alt=""> </li>
                         </ul>
-                        <span class="label-rating text-warning">4.5</span>
+                        <span class="label-rating text-warning"><ul class="list-group list-group-horizontal title" >
+                            <li class="list-group-item" *ngFor="let star of star"style="width: 50px;">
+                              <i
+                                [class]="
+                                  item.star >= star
+                                    ? 'fa fa-star text-success'
+                                    : 'fa fa-star-o text-gray'
+                                "
+                              ></i>
+                            </li>
+                          </ul></span>
                       </div> <!-- rating-wrap.// -->
                       <p>{{ item.description }}</p>
                     </div> <!-- card-body.// -->

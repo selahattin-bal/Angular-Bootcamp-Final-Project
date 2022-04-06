@@ -17,7 +17,7 @@ export class ProductsdetailComponent implements OnInit {
  
   ngOnInit(): void {
 //With paramMap you can route multiple page with only one template 
-    let itemId=this.route.snapshot.paramMap.get("id")
+    let itemId:any=this.route.snapshot.paramMap.get("id")
     this.currentId=Number(itemId)
 //For template view taking data from server
     this.api.getProductApi().subscribe(

@@ -3,7 +3,7 @@
         <h1 style="color: aliceblue;" class="navbar-brand">Angular Crud</h1>
         <div class="d-flex">
 
-            <button  type="button" id="add-btn" class="btn btn-success" (click)="clickAddadmin()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+            <button  type="button" id="add-btn" class="btn btn-success" (click)="addProduct()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
             <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
         </div>
     </div>
@@ -69,6 +69,8 @@
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Image Url</label>
                         <input type="text" formControlName="image" class="form-control" id="exampleInputPassword1">
+                        <div>Preview</div>
+                        <img src="{{formValue.value.image}}" alt="">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Brand</label>
