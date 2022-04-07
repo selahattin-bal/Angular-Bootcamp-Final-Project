@@ -56,25 +56,25 @@ export class ApiService {
   
   //ADMIN SECTION
 // HEPSİ APİ İSTEĞİYLE YAPILMALI ÇÜNKÜ SERVER DA DEĞİŞMELİ 
-  Postadmin(data : any){
+  postItemApi(data : any){
     return this.http.post<any>(`${this.apiURL}products`,data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
-  Deleteadmin(id : number){
+  deleteItemApi(id : number){
     return this.http.delete<any>(`${this.apiURL}products/${id}`)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
-  Updateadmin(data : any){
-    return this.http.put<any>(`${this.apiURL}products/${data.id}`,data)
+  updateItemApi(data:any,id:number){
+    return this.http.put<any>(`${this.apiURL}products/${id}`,data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
-  Getadmins(){
+  getItemApi(){
     return this.http.get<any>(`${this.apiURL}products`)
     .pipe(map((res:any)=>{
       return res;

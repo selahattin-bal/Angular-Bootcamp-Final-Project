@@ -1,0 +1,38 @@
+<div mat-dialog-title>Add Item List</div>
+<div mat-dialog-content>
+ <form [formGroup]="formValue">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Brand</mat-label>
+    <input matInput formControlName="brand">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Price $</mat-label>
+    <input type="number" formControlName="price"matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select  formControlName="category" >
+      <mat-option value="coffee">Coffee</mat-option>
+      <mat-option value="coffeeaccessories">Coffee Accessories</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Image URL</mat-label>
+    <textarea matInput formControlName="image"></textarea>
+  </mat-form-field>
+  <div>Preview</div>
+  <img src="{{formValue.value.image}}" alt="">
+ </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="postItem()">{{actionButton}}</button>
+  <button mat-raised-button color="warn" mat-dialog-close (click)="close()">Close</button>
+</div>

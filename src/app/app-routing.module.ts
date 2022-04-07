@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { adminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import { CartComponent } from './component/cart/cart.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { LoginComponent } from './component/login/login.component';
 import { OrdersComponent } from './component/orders/orders.component';
 import { ProductsComponent } from './component/products/products.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:adminDashboardComponent,canActivate:[AdminGuard],canDeactivate:[UnsavedGuard]},
+  {path:'dash',component:DashboardComponent,canActivate:[AdminGuard],canDeactivate:[UnsavedGuard]},
   //Wildcard invalid routes and guard will be redirected to here 
   {path:'**', redirectTo:'login',pathMatch:'full'}
 ];

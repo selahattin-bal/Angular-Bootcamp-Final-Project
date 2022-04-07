@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
    
    
-  constructor(private api:ApiService,private router:Router){}
+  constructor(private api:ApiService,private router:Router,private toastr: ToastrService){}
   
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -20,7 +20,7 @@ export class AdminGuard implements CanActivate {
           return true
         } 
         else{
-          alert("You can not access without permission")
+          this.toastr.error('You can not access without permission')
           this.router.navigate([""])
           localStorage.clear()
           return false

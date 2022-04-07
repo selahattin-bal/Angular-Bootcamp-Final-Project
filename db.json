@@ -1,28 +1,15 @@
 {
   "products": [
     {
-      "id": 1,
       "title": "Hazelnut Flavored Arabica Coffee Ground, Medium Roast, 340 Gr",
-      "price": 119.9,
       "brand": "AmazonFresh",
+      "price": 149.9,
       "description": "Fragrant medium-light roast with toasted hazelnut flavor One 12-ounce bag of ground coffee 100% Arabica coffee grown in Central and South America Roasted and packed in the U.S.A.",
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81w29mbZOtL._AC_UL320_.jpg",
-      "star": 2,
-      "comment": [
-        {
-          "username": "Jonh Doe",
-          "comment": "To an old man a cup of coffee is like the door post of an old house — it sustains and strengthens him."
-        },
-        {
-          "username": "Sarah Oprah",
-          "comment": "Coffee makes us severe, and grave, and philosophical."
-        },
-        {
-          "username": "Barack Obama",
-          "comment": "I orchestrate my mornings to the tune of coffee."
-        }
-      ]
+      "star": 0,
+      "comment": "",
+      "id": 1
     },
     {
       "id": 2,
@@ -30,7 +17,8 @@
       "price": 79.9,
       "brand": "Peet's Coffee",
       "description": "Major Dickason`s Blend: Conceived by Mr. Peet and his most discerning customer, Major Dickason’s Blend has become the coffee that epitomizes the rich, flavorful taste of Peet`s Flavor and Roast: Incomparable world blend, rich, complex, and full-bodied. Dark roast. 100% Arabica Coffee",
-      "image": "https://m.media-amazon.com/images/I/61AzSeP33yL._AC_UL320_.jpg","category": "coffee",
+      "image": "https://m.media-amazon.com/images/I/61AzSeP33yL._AC_UL320_.jpg",
+      "category": "coffee",
       "star": 5,
       "comment": [
         {
@@ -64,8 +52,7 @@
       "category": "coffeeaccessories",
       "image": "https://m.media-amazon.com/images/I/51EjKg6vAIL._AC_UL320_.jpg",
       "star": 4,
-      "comment": [
-      ]
+      "comment": []
     }
   ],
   "signupUsers": [

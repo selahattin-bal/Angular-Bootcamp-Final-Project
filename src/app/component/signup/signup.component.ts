@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { passwordMatchValidatorService } from 'src/app/services/passwordMatchValidator.service';
 import { usernameValidator} from  'src/app/services/regexValidator';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -12,7 +13,7 @@ import { usernameValidator} from  'src/app/services/regexValidator';
 export class SignupComponent implements OnInit {
 signupForm!:FormGroup
 
-  constructor(private formBuilder:FormBuilder, private router:Router, private api:ApiService,private match:passwordMatchValidatorService) { }
+  constructor(private formBuilder:FormBuilder, private router:Router, private api:ApiService,private match:passwordMatchValidatorService,private toastr: ToastrService) { }
    //using pattern att. for regex valid.(common patterns are used)
   emailPattern =/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
   pwdPattern =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
@@ -39,11 +40,11 @@ signupForm!:FormGroup
   // sending data with api.signUp 
   signUp(){
     this.api.signUp(this.signupForm).subscribe(res=>{
-      alert("You have signed up successfully ")
+      this.toastr.success('You have signed up successfully')
       this.signupForm.reset()
       this.router.navigate(["login"]) 
   },err=>{
-    alert("Something went wrong")
+    this.toastr.error("Something went wrong")
   })
   }
 }

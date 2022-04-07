@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
 
   public cartItems: any = [];
   public grandTotal: any=0
-  constructor(private cartService: CartService, private api:ApiService ,private router:Router ) { }
+  constructor(private cartService: CartService, private api:ApiService ,private router:Router ,private toastr: ToastrService) { }
 
 
 
@@ -51,6 +52,7 @@ export class CartComponent implements OnInit {
     let orderNumber=Math.floor(Math.random()*1000000)
     let order:any= [{"user":user,"ordernumber":orderNumber},{"order":this.cartItems}]
     this.api.checkoutApi(order).subscribe()
+    this.toastr.success('You ordered succesfully', 'Checkout');
     this.cartService.removeAllCart()
     this.router.navigate(["orders"])
   }

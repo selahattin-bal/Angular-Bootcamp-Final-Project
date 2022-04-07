@@ -97,7 +97,7 @@
 
                                         <div class="col-6">
                                             <label for="max" class="form-label">Max</label>
-                                            <input class="form-control" id="max" placeholder="$1,0000" type="number"
+                                            <input class="form-control" id="max" placeholder="$1,000" type="number"
                                                 #max />
                                         </div>
                                         <!-- col end.// -->
@@ -175,7 +175,7 @@
                 </aside>
                 <!-- col .// -->
                 <main class="col-lg-9">
-                    <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
+                    <div id="carouselExampleControls" class="carousel slide mb-2" data-bs-ride="carousel">
                         <div class="carousel-inner">
                           <div class="carousel-item active">
                             <img src="https://img.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg?t=st=1649253188~exp=1649253788~hmac=0e5228440c23bfc4fde6b914d9826fbd350242abc980c3562b77cc011da7b2e5&w=1380" class="d-block w-100" height="400px" alt="...">
@@ -196,8 +196,8 @@
                           <span class="visually-hidden">Next</span>
                         </button>
                       </div>
-                    <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-                        <strong class="d-block py-2">Result:
+                    <header class="d-sm-flex align-items-center border-bottom mb-3 pb-2">
+                        <strong class="d-block pt-2">Result:
                             {{ (filteredProducts| filterHandler: searchKey:'title').length }} items found
                         </strong>
                         <div class="ms-auto">
@@ -226,7 +226,7 @@
               
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <figure class="card card-product-grid">
-                                    <div class="img-wrap pt-2">
+                                    <div class="img-wrap pt-2 grid">
                                         <img src="{{ item.image }}" />
                                     </div>
                                     <figcaption class="info-wrap border-top">
@@ -328,25 +328,6 @@
                         </ng-container>
                     </div>
                     <hr />
-
-                    <footer class="d-flex mt-4">
-                        <div>
-                            <a href="javascript: history.back()" class="btn btn-light">
-                                « Go back</a>
-                        </div>
-                        <nav class="ms-3">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <span class="page-link">2</span>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </footer>
 
                     <!-- ========= content items .// ========= -->
                 </main>

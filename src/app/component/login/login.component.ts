@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { filter, first, map } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 public loginForm!: FormGroup
 
   constructor(private formBuilder:FormBuilder,
-    private router:Router,private api:ApiService) { }
+    private router:Router,private api:ApiService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
@@ -34,13 +34,13 @@ public loginForm!: FormGroup
 
     localStorage.setItem('token', JSON.stringify(data[0].token))
     if(data[0].role==="admin"){
-      this.router.navigate(["dashboard"])
+      this.router.navigate(["dash"])
     }
     else if(data[0].role==="user"){
       this.router.navigate(["products"])
     }
   }else{
-    alert("Email or Password Wrong")
+    this.toastr.error('Email or Password Wrong');
   }
 
 }

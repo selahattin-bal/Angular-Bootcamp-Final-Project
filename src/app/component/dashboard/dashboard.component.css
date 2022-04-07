@@ -1,0 +1,24 @@
+mat-toolbar{
+  margin-top: 60px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 5%;
+  }
+
+  .container{
+    width: 1500px;
+  }

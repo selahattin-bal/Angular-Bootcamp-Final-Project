@@ -3,12 +3,13 @@ import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule,FormBuilder } from '@angular/forms';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
+
 export class ProductsComponent implements OnInit {
   // for star template
 
@@ -21,7 +22,7 @@ export class ProductsComponent implements OnInit {
   public viewGrid = true
   public uniqueBrands:any=[]
 
-  constructor(public fb:FormBuilder, private api: ApiService, private cartService: CartService, private router: Router) { }
+  constructor(public fb:FormBuilder, private api: ApiService, private cartService: CartService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     //getting product from server
@@ -54,6 +55,7 @@ export class ProductsComponent implements OnInit {
   
   addtocart(item: any) {
     this.cartService.addtoCart(item);
+    this.toastr.success('Item Added To Cart', 'Checkout');
   }
   //category filtering 
   // APİ isteği ile yapılabilir. ama hali hazırda datayı aldım neden bir daha istek atayım

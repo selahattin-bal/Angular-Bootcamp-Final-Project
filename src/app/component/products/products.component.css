@@ -94,14 +94,14 @@ b.price,
 .category{ color: black;
     }.category:focus{color: gray;}
     .category:hover{color: gray;}
-    .card img {
+    .grid img {
         width: 245px;
         height: 300px;
         margin-bottom: 15px;
         transition: 0.3s ease-in-out;
     }
     
-    .card img:hover {
+    .grid img:hover {
         transition: 0.3s ease-in-out;
         transform: scale(1.12);
     }
