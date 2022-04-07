@@ -12,23 +12,23 @@
             <!-- Empty Cart Section Start-->
             <div class="items">
               <div class="container" *ngIf="cartItems.length == 0">
-                <div class="row mt-5">
-                  <h4 class="col mt-5 col-md-4 offset-md-4">
+                <div class="d-flex   justify-content-center mt-5 pt-5">
+                  <div class="p-2"><h4 class="mt-2">
                     Your cart is empty!
-                  </h4>
-                  <button
+                  </h4></div>
+                  <div class="p-2"><button
                     routerLink="/products"
-                    class="btn btn-primary col-md-4 offset-md-4 w-25"
-                  >
+                    class="btn btn-primary "
+                   >
                     Shop Now
-                  </button>
+                  </button></div>
                 </div>
               </div>
               <!-- Empty Cart Section End-->
               <!--  Cart items  Start-->
               <div
                 class="product"
-                *ngFor="let item of cartItems; let i = index"
+                *ngFor="let item of cartItems;index as i"
               >
                 <div class="row">
                   <div class="col-md-3">

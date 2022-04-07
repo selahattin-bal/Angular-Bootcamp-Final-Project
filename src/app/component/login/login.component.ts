@@ -27,11 +27,8 @@ public loginForm!: FormGroup
     //getting data from json and checking input matching
   this.api.login(this.loginForm.value.email,this.loginForm.value.password).subscribe((data:any)=>{
     if(data.length!==0){
-
       this.api.user.next(data[0])
-
       this.loginForm.reset()
-
     localStorage.setItem('token', JSON.stringify(data[0].token))
     if(data[0].role==="admin"){
       this.router.navigate(["dash"])

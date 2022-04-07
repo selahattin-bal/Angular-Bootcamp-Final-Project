@@ -13,7 +13,7 @@ import { UnsavedGuard } from './services/unsaved.guard';
 
 //page routes for components
 const routes: Routes = [
-  {path:'products', component: ProductsComponent},
+  {path:'products', component: ProductsComponent,canActivate:[AuthGuard]},
   {path:'products/:id', component: ProductsdetailComponent,canActivate:[AuthGuard]},
   {path:'cart', component: CartComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},

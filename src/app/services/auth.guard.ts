@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
         return true
       }
     else{
-      this.toastr.error('You can not access without login')
+      this.toastr.error('You can not access without login','Alert!')
       this.router.navigate([''])
       return false
     }
