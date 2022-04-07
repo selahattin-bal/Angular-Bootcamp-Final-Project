@@ -38,6 +38,8 @@ export class DialogComponent implements OnInit {
        this.formValue.controls['description'].setValue(this.row.description)
        this.formValue.controls['category'].setValue(this.row.category)
        this.formValue.controls['image'].setValue(this.row.image)
+       this.formValue.controls['star'].setValue(this.row.star)
+       this.formValue.controls['comment'].setValue(this.row.comment)
     }
   }
 
@@ -49,7 +51,6 @@ postItem() {
     this.api.postItemApi(this.formValue.value)
     .subscribe(res => {
       this.formValue.reset()
-      this.dialogRef.close()
       this.toastr.success('Product Added', 'Success');
     })
    }
@@ -68,7 +69,6 @@ updateItem(){
     this.api.updateItemApi(this.formValue.value,this.row.id)
     .subscribe(res => {
       this.formValue.reset()
-      this.dialogRef.close()
       this.toastr.success('Product Added', 'Success');
     })
    }
@@ -81,5 +81,7 @@ close(){
   this.dialogRef.close(this.formValue)
 }
 
- 
+public errorHandling = (control: string, error: string) => {
+  return this.formValue.controls[control].hasError(error);
+}
 }

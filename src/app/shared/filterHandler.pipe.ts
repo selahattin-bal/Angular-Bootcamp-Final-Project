@@ -7,8 +7,8 @@ export class FilterPipe implements PipeTransform {
 // Pipe for search handling
 
 //Usage (value)| filter:filterstring:propname
-//By includes only filtered items will returned
-//Everything returning to lowercas son not case sensitive 
+//With includes method only filtered items will returned
+//Everything returning to lowercase so not case sensitive 
 
   transform(value : any[], filterString: string, propName:string): any[] {
     const result:any =[];

@@ -1,19 +1,29 @@
 {
   "products": [
     {
-      "title": "Hazelnut Flavored Arabica Coffee Ground, Medium Roast, 340 Gr",
+      "id": 1,
+      "title": "Hazelnut Arabica Ground,Medium Roast,340 Gr",
       "brand": "AmazonFresh",
       "price": 149.9,
       "description": "Fragrant medium-light roast with toasted hazelnut flavor One 12-ounce bag of ground coffee 100% Arabica coffee grown in Central and South America Roasted and packed in the U.S.A.",
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81w29mbZOtL._AC_UL320_.jpg",
-      "star": 0,
-      "comment": "",
-      "id": 1
+      "star": 5,
+      "comment": [
+        {
+        "username":"Howard Schultz",
+        "comment":"I was taken by the power that savoring a simple cup of coffee can have to connect people and create community."
+      },{"username":"Anonymous",
+        "comment":"Coffee is the best medicine..."
+      },
+       {"username":"David Lynch",
+         "comment":"To me, the smell of freshmade coffee is one of the greatest inventions."
+    }
+    ]
     },
     {
       "id": 2,
-      "title": " Dark Roast Ground Coffee - Major Dickason's Blend 510 Gr Bag",
+      "title": " Dark Roast Ground Coffee Dickason's Blend 510 Gr",
       "price": 79.9,
       "brand": "Peet's Coffee",
       "description": "Major Dickason`s Blend: Conceived by Mr. Peet and his most discerning customer, Major Dickason’s Blend has become the coffee that epitomizes the rich, flavorful taste of Peet`s Flavor and Roast: Incomparable world blend, rich, complex, and full-bodied. Dark roast. 100% Arabica Coffee",
@@ -29,7 +39,7 @@
     },
     {
       "id": 3,
-      "title": "Veranda Blend Light Blonde Roast Ground Coffee 340 Gr (Pack of 6)",
+      "title": "Veranda Blend Light Blonde Roast Ground Coffee 340 Gr",
       "price": 246.9,
       "brand": "Starbucks",
       "description": "PREMIUM GROUND COFFEE —Starbucks delivers exceptional coffee cup after cup with this 12-ounce bag of Veranda Blend lightly roasted ground coffee—6 bags total VERANDA BLEND—Our lightest roasted coffee with notes of toasted malt and baking chocolate FRESH TASTE—Starbucks. ",
@@ -45,13 +55,63 @@
     },
     {
       "id": 4,
-      "title": "Pour Over Coffee Maker with Permanent Filter, 1 Liter, 34 Ounce Black Band",
+      "title": "Pour Over Coffee Maker with Permanent Filter, 1 Liter",
       "price": 405.9,
       "brand": "Bodum",
       "description": "Pour over Coffee: manual pour over Coffee maker allows you to brew an excellent cup of Coffee in minutes Stainless steel: includes a Permanent, stainless steel mesh filter that helps extract your coffee's aromatic oils and subtle flavors instead of being absorbed by a paper filter. ",
       "category": "coffeeaccessories",
       "image": "https://m.media-amazon.com/images/I/51EjKg6vAIL._AC_UL320_.jpg",
       "star": 4,
+      "comment": []
+    },{
+      "id": 5,
+      "title": "Medium Roast Ground Coffee Variety Pack Arabica 3 bags ",
+      "price": 135.9,
+      "brand": "Starbucks",
+      "description": "PREMIUM GROUND COFFEE—Starbucks delivers exceptional coffee cup after cup with House Blend, Pike Place Roast and Breakfast Blend medium roast coffees. Each ground coffee bag is 12 ounces STARBUCKS MEDIUM ROAST VARIETY—From the notes of toffee and dusted cocoa of Starbucks House Blend",
+      "category": "coffee",
+      "image": "https://m.media-amazon.com/images/I/81Q5T-8jvAL._AC_UL320_.jpg",
+      "star": 4,
+      "comment": []
+    },{
+      "id": 6,
+      "title": "Dark Roast K-Cup Pods Brewers Blend 32 Count",
+      "price": 243.9,
+      "brand": "Peet's Coffee",
+      "description": "Major Dickason's Blend: Conceived by Mr. Peet and his most discerning customer, Major Dickason’s Blend has become the coffee that epitomizes the rich, flavorful taste of Peet’s Flavor and Roast: Incomparable world blend, rich, complex, and full-bodied. Dark roast. 100% Arabica Coffee Signature Blends",
+      "category": "coffee",
+      "image": "https://m.media-amazon.com/images/I/81ELSPN3xAL._AC_UL320_.jpg",
+      "star": 2,
+      "comment": []
+    },{
+      "id": 7,
+      "title": "Organic Whole Foods Special Blend Coffee 510 Gr",
+      "price": 59.9,
+      "brand": "Allegro",
+      "description": "Amazing products, exceptional ingredients, no compromises Specialty ground coffee Light & dark roast Spicy, sweet, smoky",
+      "category": "coffee",
+      "image": "https://m.media-amazon.com/images/I/819yDDqqOJL._AC_UL320_.jpg",
+      "star": 4,
+      "comment": []
+    },{
+      "id": 8,
+      "title": "The Original Roast Medium Roast Ground Coffee",
+      "price": 275.9,
+      "brand": "Maxwell House",
+      "description": "Pour over Coffee: manual pour over Coffee maker allows you to brew an excellent cup of Coffee in minutes Stainless steel: includes a Permanent, stainless steel mesh filter that helps extract your coffee's aromatic oils and subtle flavors instead of being absorbed by a paper filter. ",
+      "category": "coffee",
+      "image": "https://m.media-amazon.com/images/I/91iMYD0f7iL._AC_UL320_.jpg",
+      "star": 5,
+      "comment": []
+    },{
+      "id": 9,
+      "title": "French Press Coffee Maker, 304 Stainless Steel Coffee",
+      "price": 405.9,
+      "brand": "BAYKA",
+      "description": "Medium original roast coffee has a classic, smooth flavor Maxwell House Medium Roast Original Roast Ground Coffee has a consistently great taste Made with 100% pure coffee Great served black or with cream and sugar. Try it with Maxwell House International Cafe as creamer",
+      "category": "coffeeaccessories",
+      "image": "https://m.media-amazon.com/images/I/71dMl1-+Z9L._AC_UL320_.jpg",
+      "star": 3,
       "comment": []
     }
   ],

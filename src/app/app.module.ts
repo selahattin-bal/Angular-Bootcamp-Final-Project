@@ -54,6 +54,7 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    // View Modules (Toastr, Angular Metarial)
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   MatIconModule,

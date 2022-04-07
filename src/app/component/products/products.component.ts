@@ -51,6 +51,10 @@ export class ProductsComponent implements OnInit {
   }
 
   
+  // Sending element id to product detail paramMap
+  onSelect(item: any) {
+    this.router.navigate(["/products", item.id])
+  }
 
   
   addtocart(item: any) {
@@ -64,15 +68,6 @@ export class ProductsComponent implements OnInit {
   // BÜTÜN FİLTRELER ORGANİZE ÇALIŞMIYOR AYRI BİR DEĞİŞKEN DAHA TANIMLAMA GEREKBİLİR
 
 
-  categoryFilterHandler(category: string) {
-    this.filteredProducts = this.products
-      .filter((product: any) => {
-        if (product.category == category || category == '') {
-          return product;
-        }
-      })
-  }
-  
 
   viewHandler(category: string) {
     if (category === "grid") {
@@ -84,6 +79,15 @@ export class ProductsComponent implements OnInit {
   }
   // APİ isteği ile yapılabilir. ama hali hazırda datayı aldım neden bir daha istek atayım
 
+  categoryFilterHandler(category: string) {
+    this.filteredProducts = this.products
+      .filter((product: any) => {
+        if (product.category == category || category == '') {
+          return product;
+        }
+      })
+  }
+  
   //REFACTOR SWTİCH CASE
   priceFilter(min: any, max: any) {
     this.filteredProducts = this.products
@@ -107,10 +111,6 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  // Sending element id to product detail paramMap
-  onSelect(item: any) {
-    this.router.navigate(["/products", item.id])
-  }
 
 // DB den gelen brand e göre şekil alıyor yani dinamik
 
@@ -148,7 +148,6 @@ export class ProductsComponent implements OnInit {
   
 
   starFilter(star:any){
-
     if(star.target.value==1)
     this.filteredProducts = this.products
     .filter((product: any) => {
