@@ -16,16 +16,18 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="products"
-        style="font-size: 16px;">Products <span class="sr-only">(current)</span></a
+        <a class="nav-link" routerLink="products" style="font-size: 16px"
+          >Products <span class="sr-only">(current)</span></a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="orders"style="font-size: 16px;">My Orders</a>
+        <a class="nav-link" routerLink="orders" style="font-size: 16px"
+          >My Orders</a
+        >
       </li>
     </ul>
-    
-<!-- search bar -->
+
+    <!-- search bar -->
     <form class="form-inline mt-2 mt-md-0 w-50 mx-auto">
       <input
         class="form-control mr-sm-2"
@@ -37,49 +39,37 @@
         (keyup)="search($event)"
       />
     </form>
-   
   </div>
 
-  
-
-  <!-- logout-login button -->
+  <!-- username and logout-login button -->
   <div>
-   
-  <button
-    *ngIf="user"
-    (click)="logout()"
-    routerLink="login"
-    class="btn"
-    style="color: white"
-  >
-  <span style="color: white;padding-top: 10px; padding-right: 30px;">{{user.username}}</span>Logout
-  </button>
+    <button
+      *ngIf="user"
+      (click)="logout()"
+      routerLink="login"
+      class="btn"
+      style="color: white"
+    >
+      <span style="color: white; padding-top: 10px; padding-right: 30px">{{
+        user.username
+      }}</span
+      >Logout
+    </button>
 
-  <button
-    *ngIf="!user"
-    routerLink="login"
-    class="btn"
-    style="color: white"
-  >
-    Login
-  </button>
+    <button *ngIf="!user" routerLink="login" class="btn" style="color: white">
+      Login
+    </button>
 
-  <button
-    *ngIf="!user"
-    routerLink="signup"
-    class="btn"
-    style="color: white"
-  >
-    Signup
-  </button>
-  <!--cart with counter -->
+    <button *ngIf="!user" routerLink="signup" class="btn" style="color: white">
+      Signup
+    </button>
+    <!--cart with counter -->
 
-  <button routerLink="cart" class="btn" style="color: white">
-    <i style="font-size: 25px" class="fa-solid fa-cart-shopping"></i>
-    <div style="font-size: 10px" class="badge bg-success">
-      {{ totalItem }}
-    </div>
-  </button>
+    <button routerLink="cart" class="btn" style="color: white">
+      <i style="font-size: 25px" class="fa-solid fa-cart-shopping"></i>
+      <div style="font-size: 10px" class="badge bg-success">
+        {{ totalItem }}
+      </div>
+    </button>
   </div>
 </div>
-

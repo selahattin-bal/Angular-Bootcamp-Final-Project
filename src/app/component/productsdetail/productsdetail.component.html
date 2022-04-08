@@ -7,8 +7,8 @@
   <!-- Checking id which coming from product page click event -->
   <div class="card" *ngIf="item.id == currentId">
     <div class="card-body">
-      <h3 class="card-title"> {{ item.title }}</h3>
-      
+      <h3 class="card-title">{{ item.title }}</h3>
+
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6">
           <div class="white-box text-center">
@@ -16,7 +16,6 @@
           </div>
         </div>
         <div class="col-lg-7 col-md-7 col-sm-6">
-          
           <h4 class="box-title mt-5">Product description</h4>
           <h5 class="card-title">Brand: {{ item.brand }}</h5>
           <p>{{ item.description }}</p>
@@ -29,13 +28,13 @@
 
           <h3 class="box-title mt-5">Key Highlights</h3>
           <ul class="list-unstyled">
-            <li><i class="fa fa-check text-success"></i> 100% Arabica Coffee</li>
+            <li>
+              <i class="fa fa-check text-success"></i> 100% Arabica Coffee
+            </li>
             <li>
               <i class="fa fa-check text-success"></i> The Pursuit of Perfection
             </li>
-            <li>
-              <i class="fa fa-check text-success"></i> Roasted by Hand
-            </li>
+            <li><i class="fa fa-check text-success"></i> Roasted by Hand</li>
           </ul>
           <!-- With help of star array adding 5 star according to data from server -->
           <ul class="list-group list-group-horizontal">
@@ -58,7 +57,7 @@
 <div class="container">
   <div class="be-comment-block">
     <h1 class="comments-title">
-      Comments ({{ productsDetail[currentId-1].comment.length }})
+      Comments ({{ productsDetail[currentId - 1].comment.length }})
     </h1>
     <div
       class="container"

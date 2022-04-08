@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const authToken = this.api.getToken()
-    // if there is a token add this token in http request
+    // if there is a token add this token in http request(at header part) so backend can check required validations
     if(authToken){
       request=request.clone({
         setHeaders:{

@@ -64,25 +64,26 @@
         "
         >Password is too weak</span
       >
-       <!--Confirm  Password -->
-       <label for="exampleInputPassword1" class="sr-only">Confirm Password</label>
-       <input
-         formControlName="confirmpassword"
-         type="password"
-         class="form-control"
-         id="exampleInputPassword1"
-         placeholder="Confirm Password"
-       />
-       <span
-         class="text-danger"
-         *ngIf="
-           signupForm.controls['confirmpassword'].dirty &&
-           signupForm.hasError('passwordMismatch', 'confirmpassword')
-         "
-         >Passwords do not match</span
-       >
+      <!--Confirm  Password -->
+      <label for="exampleInputPassword1" class="sr-only"
+        >Confirm Password</label
+      >
+      <input
+        formControlName="confirmpassword"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Confirm Password"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          signupForm.controls['confirmpassword'].dirty &&
+          signupForm.hasError('passwordMismatch', 'confirmpassword')
+        "
+        >Passwords do not match</span
+      >
     </div>
-   
 
     <!-- Login button -->
     <button

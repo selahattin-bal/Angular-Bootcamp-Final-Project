@@ -11,13 +11,17 @@ import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent implements OnInit {
-  formValue !: FormGroup;
-  item:any={}
-  itemData : any;
-  actionButton:string="Add"
+ public formValue !: FormGroup;
+ //for showing update or add button depends on situation
+ public actionButton:string="Add"
+
+ //Angular dialog metarial working like modal but more complex and efficent
+ //Dashboard actions handling with mat-dialog-ref
+ //Data transfered with mat-dialog-data 
   constructor(private api: ApiService,private formBuilder: FormBuilder,private toastr: ToastrService,private dialogRef:MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public row:any) { }
 
+    //validators for dialog form
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
       title: ['',Validators.required],
@@ -29,7 +33,7 @@ export class DialogComponent implements OnInit {
       star:[0],
       comment:['']
     })
-  
+  //setting formvalues for updating action
     if(this.row){
       this.actionButton="Update"
        this.formValue.controls['title'].setValue(this.row.title)
@@ -44,7 +48,7 @@ export class DialogComponent implements OnInit {
   }
 
  
-
+// if you click update return update action else posting item to db with form value
 postItem() {
  if(!this.row){
   if(this.formValue.value){
@@ -56,6 +60,7 @@ postItem() {
    }
   else{
     this.toastr.error('Form Values Are Not Valid', 'Error');
+    //sending form data with close action so dashboard and guard can use 
     this.dialogRef.close(this.formValue)
   }
  }
@@ -64,6 +69,7 @@ postItem() {
  }
 }
 
+//updating item to db with form value and row.id(which they picked with button)
 updateItem(){
   if(this.formValue.valid){
     this.api.updateItemApi(this.formValue.value,this.row.id)
@@ -74,13 +80,15 @@ updateItem(){
    }
   else{
     this.toastr.error('Form Values Are Not Valid', 'Error');
+    //sending form data with close action so dashboard and guard can use 
     this.dialogRef.close(this.formValue)
   }
 }
 close(){
+  //sending form data with close action so dashboard and guard can use 
   this.dialogRef.close(this.formValue)
 }
-
+//Error handling for formvalidation  at template 
 public errorHandling = (control: string, error: string) => {
   return this.formValue.controls[control].hasError(error);
 }

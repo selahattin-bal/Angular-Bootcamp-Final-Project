@@ -9,7 +9,7 @@ export class ErrorHandleInterceptor implements HttpInterceptor {
       })
     )
   }
-  //Client Errors by result for HTTP requests
+  //Custom Client Errors by result for HTTP requests anothers codes can be added
   handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'Unknown message';
 

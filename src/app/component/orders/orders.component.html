@@ -7,12 +7,13 @@
         <p>Best Products, High Quality, Fair Price.</p>
       </div>
       <div class="content">
-        
         <div class="row">
-          <div class="items ">
+          <div class="items">
             <!-- looping orders -->
-            <div class="pt-3"style="margin-left:30px">Order Number:<strong> {{orders[0].ordernumber}}</strong> </div>
-            <hr>
+            <div class="pt-3" style="margin-left: 30px">
+              Order Number:<strong> {{ orders[0].ordernumber }}</strong>
+            </div>
+            <hr />
             <div class="product" *ngFor="let item of orders[1].order">
               <div class="row">
                 <div class="col-md-3">

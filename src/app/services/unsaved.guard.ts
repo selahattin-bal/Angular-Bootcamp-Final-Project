@@ -14,6 +14,7 @@ export class UnsavedGuard implements CanDeactivate<DashboardComponent> {
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      // running according to canExit output which in dashboard comp.
     return component.canExit()
   }
   

@@ -9,28 +9,29 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./productsdetail.component.css']
 })
 export class ProductsdetailComponent implements OnInit {
-
+  //for star template
   public star: number[] = [1, 2, 3, 4, 5];
-  public productsDetail:any 
-  public currentId:any
+  //public bc they will reached by template
+  public productsDetail: any
+  public currentId: any
 
-  constructor(private route:ActivatedRoute, private api:ApiService,private cartService:CartService,private toastr: ToastrService) { }
- 
+  constructor(private route: ActivatedRoute, private api: ApiService, private cartService: CartService, private toastr: ToastrService) { }
+
   ngOnInit(): void {
-//With paramMap you can route multiple page with only one template 
-    let itemId:any=this.route.snapshot.paramMap.get("id")
-    this.currentId=Number(itemId)
-//For template view taking data from server
+    //With paramMap you can route multiple page with only one template 
+    let itemId: any = this.route.snapshot.paramMap.get("id")
+    this.currentId = Number(itemId)
+    //For template view taking data from server
     this.api.getProductApi().subscribe(
-      res=>{
-        this.productsDetail=res;
-    })
+      res => {
+        this.productsDetail = res;
+      })
   }
-
-  addtocart(item: any){
+  //adding to cart from product detail page
+  addtocart(item: any) {
     this.cartService.addtoCart(item);
     this.toastr.success('Item Added To Cart', 'Checkout');
   }
 
-  
+
 }

@@ -10,55 +10,55 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  //At beginning getting data dynamically at cartItems then all action made by method
   public cartItems: any = [];
-  public grandTotal: any=0
-  constructor(private cartService: CartService, private api:ApiService ,private router:Router ,private toastr: ToastrService) { }
-
-
+  public grandTotal: number = 0
+  constructor(private cartService: CartService, private api: ApiService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.cartService.getProducts()
       .subscribe(res => {
-          this.cartItems = res;
-          this.cartItems.forEach((item: any) => {
-            Object.assign(item, { quantity: 1, total: Number(item.price) });
-            //commentler sipariş ekranına gitmesin diye 
-            delete item.comment
-          });
-          this.grandTotal=0
-          for(let item of this.cartItems){
-            this.grandTotal+=Number(item.total)
-          }
+        this.cartItems = res;
+        this.cartItems.forEach((item: any) => {
+          //assigning quantity and total for checkout 
+          Object.assign(item, { quantity: 1, total: Number(item.price) });
+          //deleting comment and star bc. it is unnecessary for order
+          delete item.comment
+          delete item.star
+        });
+        //calculation for grandtotal 
+        this.grandTotal = 0
+        for (let item of this.cartItems) {
+          this.grandTotal += Number(item.total)
+        }
       })
-
   }
-
-
-  quantity(quantity:any,index:number){
-    for(let i=0;i<this.cartItems.length;i++){
-      if(i==index){
- this.cartItems[i].quantity=Number(quantity.target.value)
-   this.cartItems[i].total=Number(this.cartItems[i].price)*Number(quantity.target.value)
+  //checking quantity from template so total price and quantity values can be updated
+  quantity(quantity: any, index: number) {
+    for (let i = 0; i < this.cartItems.length; i++) {
+      if (i == index) {
+        this.cartItems[i].quantity = Number(quantity.target.value)
+        this.cartItems[i].total = Number(this.cartItems[i].price) * Number(quantity.target.value)
       }
     }
-  this.grandTotal=0
-   for(let item of this.cartItems){
-    this.grandTotal+=Number(item.total)
-  }
+    //calculation for grandtotal 
+    this.grandTotal = 0
+    for (let item of this.cartItems) {
+      this.grandTotal += Number(item.total)
+    }
   }
 
+  //removing coming item from service so all page will be updated automatically
   removeItem(item: any) {
     this.cartService.removeCartItem(item);
-    
   }
 
- //add to the cart ı cağırıp item in adından 1 tane daha karta ekleme yapılabilir.ama sayaç nasıl çalıaşacak belli değil
-
-  checkout(){
-    let user:any=this.api.getToken()
-    let orderNumber=Math.floor(Math.random()*1000000)
-    let order:any= [{"user":user,"ordernumber":orderNumber},{"order":this.cartItems}]
+  //adding random order number 
+  //sending order to database with ordernumber,username and JWT
+  checkout() {
+    let user: any = this.api.getToken()
+    let orderNumber = Math.floor(Math.random() * 1000000)
+    let order: any = [{ "user": user, "ordernumber": orderNumber }, { "order": this.cartItems }]
     this.api.checkoutApi(order).subscribe()
     this.toastr.success('You ordered succesfully', 'Checkout');
     this.cartService.removeAllCart()
