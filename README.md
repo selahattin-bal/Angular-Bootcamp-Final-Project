@@ -19,7 +19,7 @@
 <strong>Click the picture below for watching video on youtube. You will able see how website is working.</strong>
 
 [![IMAGE ALT TEXT](./src/assets/Screenshot_4.jpg)](https://youtu.be/XqBQ2aAztdk "Angular E-Commerce Web Application")
-(I forget to mention in video the website also responsive because of bootstrap template)
+(I forgot to mention in video that the website also responsive because of bootstrap template)
 
 ![IMAGE ALT TEXT](./src/assets/Screenshot_6.jpg)
 

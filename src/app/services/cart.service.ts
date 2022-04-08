@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-// Values for components communication
+// Values to communication between components
 //Behavior subject you can give initial value , you can next another observable anytime inside, you can emmit data and observe it
 
   public cartItemList : any =[]
    // productlist main data storage for service it is private so you can not reach directly
-  private productList = new BehaviorSubject<any>([]);
+  private productList = new BehaviorSubject<product[]>([]);
   //Carrying data between navbar and products components for filtering pipe operation. 
-  public search = new BehaviorSubject<any>("");
+  public search = new BehaviorSubject<string>("");
   
   constructor() { }
   //methods for safety to reach productlist from outside
