@@ -9,7 +9,7 @@ export class CartService {
 // Values to communication between components
 //Behavior subject you can give initial value , you can next another observable anytime inside, you can emmit data and observe it
 
-  public cartItemList : any =[]
+  public cartItemList:product[] =[]
    // productlist main data storage for service it is private so you can not reach directly
   private productList = new BehaviorSubject<product[]>([]);
   //Carrying data between navbar and products components for filtering pipe operation. 
@@ -20,19 +20,19 @@ export class CartService {
   getProducts(){
     return this.productList.asObservable();
   }
-  setProduct(product : any){
+  setProduct(product : product[]){
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
-//Adding products to cart
-  addtoCart(product : any){
+//Adding products to cart from products page
+  addtoCart(product :product){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
   }
 
 //Removing item from cart
-  removeCartItem(product: any){
-    this.cartItemList.map((item:any, index:any)=>{
+  removeCartItem(product: product){
+    this.cartItemList.map((item:any, index:number)=>{
       if(product.id=== item.id){
         this.cartItemList.splice(index,1);
       }

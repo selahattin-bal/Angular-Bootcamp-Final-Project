@@ -13,7 +13,7 @@ export class ProductsdetailComponent implements OnInit {
   public star: number[] = [1, 2, 3, 4, 5];
   //public bc they will reached by template
   public productsDetail: any
-  public currentId: any
+  public currentId!: number
 
   constructor(private route: ActivatedRoute, private api: ApiService, private cartService: CartService, private toastr: ToastrService) { }
 

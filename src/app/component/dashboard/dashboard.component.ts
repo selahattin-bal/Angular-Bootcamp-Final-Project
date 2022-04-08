@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   //metarial table properties
   displayedColumns: string[] = ['id', 'title', 'brand', 'price', 'description', 'category', 'image', 'star', 'action'];
   dataSource!: MatTableDataSource<any>;
+  //for reaching dom element of paginator and sort template
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   //data deposit for canexit() 

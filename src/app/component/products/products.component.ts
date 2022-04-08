@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   public filteredProducts: any
   public searchKey: string = "";
   public viewGrid = true
-  public uniqueBrands: any = []
+  public uniqueBrands:any = []
 
   constructor(private api: ApiService, private cartService: CartService, private router: Router, private toastr: ToastrService) { }
 
@@ -63,7 +63,6 @@ export class ProductsComponent implements OnInit {
   }
 
   //Filtering Operations(also can be done by api requests)
-
   categoryFilterHandler(category: string) {
     this.filteredProducts = this.products
       .filter((product: any) => {

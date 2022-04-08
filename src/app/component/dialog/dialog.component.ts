@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms'
 import { ApiService } from 'src/app/services/api.service';
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { product } from 'src/app/models/product';
 
 
 @Component({
@@ -16,10 +17,10 @@ export class DialogComponent implements OnInit {
  public actionButton:string="Add"
 
  //Angular dialog metarial working like modal but more complex and efficent
- //Dashboard actions handling with mat-dialog-ref
- //Data transfered with mat-dialog-data 
+ //Dashboard dialog actions handling with mat-dialog-ref
+ //Data transfered with mat-dialog-data taking data from table(dashboard component) 
   constructor(private api: ApiService,private formBuilder: FormBuilder,private toastr: ToastrService,private dialogRef:MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public row:any) { }
+    @Inject(MAT_DIALOG_DATA) public row:product) { }
 
     //validators for dialog form
   ngOnInit(): void {

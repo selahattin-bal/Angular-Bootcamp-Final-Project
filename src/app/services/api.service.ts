@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { BehaviorSubject} from 'rxjs';
+import { product } from '../models/product';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,7 @@ export class ApiService {
 
   //Product and user requests
   getProductApi() {
-    return this.http.get<any>(`${this.apiURL}products`)
+    return this.http.get<product>(`${this.apiURL}products`)
       .pipe(map((res: any) => {
         return res;
       }))
@@ -40,7 +41,7 @@ export class ApiService {
   signUp(signupForm: any) {
     return this.http.post<any>(`${this.apiURL}signupUsers`, signupForm.value)
   }
-  login(email: any, password: any) {
+  login(email: string, password: string) {
     return this.http.get(`${this.apiURL}signupUsers/?email=${email}&password=${password}`)
   }
   getToken() {
