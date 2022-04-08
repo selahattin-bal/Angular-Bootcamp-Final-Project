@@ -10,21 +10,26 @@
 ## Contents:
  - [Categories](#categories)
       - [Video](#video)
+      - [Image](#image)
       - [About](#about-project)
       - [Used Packages And Modules](#used-packages-and-modules)
       - [Getting Started](#getting-started)
       - [Prerequisites](#prerequisites)
 
 ## Video
-<strong>Click the picture below for watching video on youtube. You will able see how website is working.</strong>
+<strong>Click the picture below for watching video on youtube. You will able see how website is working.(Currently Only In Turkish)</strong>
 
 [![IMAGE ALT TEXT](./src/assets/Screenshot_4.jpg)](https://youtu.be/XqBQ2aAztdk "Angular E-Commerce Web Application")
+
+
+<strong>Click the picture below for watching detail video on youtube. You will able see how i made website.(Currently Only In Turkish)</strong>
+[![IMAGE ALT TEXT](./src/assets/Screenshot_7.jpg)](https://youtu.be/3lGlAKxVkeQ "Angular E-Commerce Web Application")
+ 
+
+## Image
 (I forgot to mention in video that the website also responsive because of bootstrap template)
 
 ![IMAGE ALT TEXT](./src/assets/Screenshot_6.jpg)
-
-<strong>Click the picture below for watching video on youtube. You will able see how i made website.</strong>
-COMING SOON
 
 ## About Project
 Angular e-commerce web application with CRUD operations for bootcamp final assignment.
