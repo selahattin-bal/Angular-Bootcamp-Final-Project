@@ -48,7 +48,7 @@
       "description": "PREMIUM GROUND COFFEE —Starbucks delivers exceptional coffee cup after cup with this 12-ounce bag of Veranda Blend lightly roasted ground coffee—6 bags total VERANDA BLEND—Our lightest roasted coffee with notes of toasted malt and baking chocolate FRESH TASTE—Starbucks. ",
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81aAFRMOddL._AC_UL320_.jpg",
-      "star": 3.5,
+      "star": 3,
       "comment": [
         {
           "username": "Alex Doe",
@@ -91,7 +91,7 @@
     },
     {
       "id": 7,
-      "title": "Organic Whole Foods Special Blend Coffee 510 Gr",
+      "title": "Organic Whole Foods Special Blend Dark Coffee 510 Gr",
       "price": 59.9,
       "brand": "Allegro",
       "description": "Amazing products, exceptional ingredients, no compromises Specialty ground coffee Light & dark roast Spicy, sweet, smoky",

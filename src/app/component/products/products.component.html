@@ -142,7 +142,7 @@
                   </div>
                   <!-- row end.// -->
                   <button
-                    class="btn btn-light w-100"
+                    class="btn btn-light w-100 mb-2"
                     type="button"
                     (click)="priceFilter(min.value, max.value)"
                   >
@@ -151,7 +151,7 @@
                   <button
                     class="btn btn-light w-100"
                     type="button"
-                    (click)="priceFilter(0, 10000)"
+                    (click)="priceFilter('','')"
                   >
                     Reset
                   </button>
@@ -177,33 +177,20 @@
                   <div class="form-check">
                     <input
                       class="form-check-input"
-                      type="radio"
+                      type="checkbox"
                       name="flexRadioDefault"
                       id="flexRadioDefault1"
-                      checked
-                      value="1"
-                      (change)="starFilter($event)"
-                    />
-                    <span class="form-check-label">
-                      <ul class="rating-stars">
-                        <li><i class="fa fa-star text-dark"></i> All Items</li>
-                      </ul>
-                    </span>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                      value="2"
+                      value="4"
                       (change)="starFilter($event)"
                     />
                     <span class="form-check-label">
                       <ul class="rating-stars">
                         <li>
                           <i class="fa fa-star text-dark"></i>
-                          <strong>4+</strong>Star
+                          <i class="fa fa-star text-dark"></i>
+                          <i class="fa fa-star text-dark"></i>
+                          <i class="fa fa-star text-dark"></i>
+                          <strong> +</strong>
                         </li>
                       </ul>
                     </span>
@@ -211,7 +198,7 @@
                   <div class="form-check">
                     <input
                       class="form-check-input"
-                      type="radio"
+                      type="checkbox"
                       name="flexRadioDefault"
                       id="flexRadioDefault2"
                       value="3"
@@ -221,7 +208,9 @@
                       <ul class="rating-stars">
                         <li>
                           <i class="fa fa-star text-dark"></i>
-                          <strong>3-3.9+</strong>Star
+                          <i class="fa fa-star text-dark"></i>
+                          <i class="fa fa-star text-dark"></i>
+                          <strong> +</strong>
                         </li>
                       </ul>
                     </span>
@@ -229,17 +218,36 @@
                   <div class="form-check">
                     <input
                       class="form-check-input"
-                      type="radio"
+                      type="checkbox"
                       name="flexRadioDefault"
                       id="flexRadioDefault2"
-                      value="4"
+                      value="2"
                       (change)="starFilter($event)"
                     />
                     <span class="form-check-label">
                       <ul class="rating-stars">
                         <li>
                           <i class="fa fa-star text-dark"></i>
-                          <strong>0-2.9+</strong>Star
+                          <i class="fa fa-star text-dark"></i>
+                          <strong> +</strong>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      value="1"
+                      (change)="starFilter($event)"
+                    />
+                    <span class="form-check-label">
+                      <ul class="rating-stars">
+                        <li>
+                          <i class="fa fa-star text-dark"></i>
+                          <strong> +</strong>
                         </li>
                       </ul>
                     </span>

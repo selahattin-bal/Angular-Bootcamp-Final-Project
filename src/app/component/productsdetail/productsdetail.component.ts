@@ -21,7 +21,9 @@ export class ProductsdetailComponent implements OnInit {
     //With paramMap you can route multiple page with only one template 
     let itemId: any = this.route.snapshot.paramMap.get("id")
     this.currentId = Number(itemId)
-    //For template view taking data from server
+    //For template view taking data from server 
+    
+    //CURRENT ID API YE YOLLA GELENİ KAYDET SADECE 
     this.api.getProductApi().subscribe(
       res => {
         this.productsDetail = res;

@@ -11,6 +11,7 @@ export class ApiService {
 
 
   public user = new BehaviorSubject<any>("")
+  public url=new BehaviorSubject ("")
   private apiURL: string = "http://localhost:3000/"
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -26,6 +27,10 @@ export class ApiService {
         return res;
       }))
   }
+
+ 
+
+
   checkoutApi(itemList: any) {
     return this.http.post<any>(`${this.apiURL}orders`, itemList)
   }
