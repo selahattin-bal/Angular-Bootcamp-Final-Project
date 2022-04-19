@@ -4,7 +4,6 @@ import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductfiltersService } from 'src/app/services/productfilters.service';
-import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -22,11 +21,11 @@ export class ProductsComponent implements OnInit {
   public uniqueBrands:any = []
   public filteringURL=`?`
 
-  constructor(private api: ApiService, private cartService: CartService, private router: Router, private toastr: ToastrService,private productFilter:ProductfiltersService,private http: HttpClient) { }
+  constructor(private api: ApiService, private cartService: CartService, private router: Router, private toastr: ToastrService,private productFilters:ProductfiltersService) { }
 
   ngOnInit(): void {
     //getting product from server
-    this.api.getProductApi()
+    this.api.getAllProductApi()
       .subscribe(res => {
         this.products = res;
         this.filteredProducts = res;
@@ -66,28 +65,25 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-
-
-  //Filtering Operations(By api requests)
+  //Filtering operation events(handling by productfilter.service)
   categoryFilter(category: string) {
-    this.productFilter.categoryFilterService(category)
-    this.productFilter.data.subscribe(res=>this.filteredProducts=res)
+    this.productFilters.categoryFilterService(category)
+    this.productFilters.data.subscribe(res=>this.filteredProducts=res)
   }
 
   priceFilter(min: any, max: any) {
-    this.productFilter.priceFilterService(min,max)
-    this.productFilter.data.subscribe(res=>this.filteredProducts=res)
+    this.productFilters.priceFilterService(min,max)
+    this.productFilters.data.subscribe(res=>this.filteredProducts=res)
   }
 
- 
   brandFilter(brand: any) { 
-    this.productFilter.brandFilterService(brand)
-    this.productFilter.data.subscribe(res=>this.filteredProducts=res)
+    this.productFilters.brandFilterService(brand)
+    this.productFilters.data.subscribe(res=>this.filteredProducts=res)
   }
 
   starFilter(star: any) {
-  this.productFilter.starFilterService(star)
-  this.productFilter.data.subscribe(res=>this.filteredProducts=res)
+  this.productFilters.starFilterService(star)
+  this.productFilters.data.subscribe(res=>this.filteredProducts=res)
   }
 
 }

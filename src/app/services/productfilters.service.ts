@@ -1,26 +1,26 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductfiltersService {
-  //sending data to api so public
+//sending data to api so public
 public filteringURL="?"
+//state for products private(safe)
 private dataSource= new BehaviorSubject<any>({})
 
-  constructor(private api:ApiService,private http: HttpClient) { }
+  constructor(private api:ApiService) { }
 
-  data=this.dataSource.asObservable()
-  
-  sendData(data:string){
+//Access methods for state
+data=this.dataSource.asObservable()
+
+sendData(data:string){
     this.dataSource.next(data)
   }
 
-//This filter only for state management and sending right data to API
- starFilterService(star:any){
+//Filter methods for products 
+starFilterService(star:any){
   if(star.target.checked){
     this.filteringURL+=`&star_gte=${star.target.value}`
     this.api.filterApi(this.filteringURL).subscribe(res=>this.dataSource.next(res))

@@ -21,7 +21,7 @@ export class ApiService {
   //Http requests for all back-end operations
 
   //Product and user requests
-  getProductApi() {
+  getAllProductApi() {
     return this.http.get<product>(`${this.apiURL}products`)
       .pipe(map((res: any) => {
         return res;
@@ -34,7 +34,6 @@ export class ApiService {
         return res;
       }))
   }
-
 
   checkoutApi(itemList: any) {
     return this.http.post<any>(`${this.apiURL}orders`, itemList)

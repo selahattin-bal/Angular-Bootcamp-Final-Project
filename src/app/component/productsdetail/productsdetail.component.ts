@@ -13,20 +13,19 @@ export class ProductsdetailComponent implements OnInit {
   public star: number[] = [1, 2, 3, 4, 5];
   //public bc they will reached by template
   public productsDetail: any
-  public currentId!: number
+  public currentUrl!: string
 
   constructor(private route: ActivatedRoute, private api: ApiService, private cartService: CartService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     //With paramMap you can route multiple page with only one template 
     let itemId: any = this.route.snapshot.paramMap.get("id")
-    this.currentId = Number(itemId)
+    this.currentUrl =`?id=${Number(itemId)}`
     //For template view taking data from server 
-    
-    //CURRENT ID API YE YOLLA GELENİ KAYDET SADECE 
-    this.api.getProductApi().subscribe(
+    this.api.filterApi(this.currentUrl).subscribe(
       res => {
         this.productsDetail = res;
+        console.log(this.productsDetail)
       })
   }
   //adding to cart from product detail page
