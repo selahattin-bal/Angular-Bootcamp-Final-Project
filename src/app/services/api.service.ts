@@ -28,7 +28,12 @@ export class ApiService {
       }))
   }
 
- 
+  filterApi(filteringUrl:string) {
+    return this.http.get<product>(`${this.apiURL}products${filteringUrl}`)
+      .pipe(map((res: any) => {
+        return res;
+      }))
+  }
 
 
   checkoutApi(itemList: any) {

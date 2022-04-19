@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
   public searchKey: string = "";
   public viewGrid = true
   public uniqueBrands:any = []
-  filteringURL=`?`
+  public filteringURL=`?`
 
   constructor(private api: ApiService, private cartService: CartService, private router: Router, private toastr: ToastrService,private productFilter:ProductfiltersService,private http: HttpClient) { }
 
@@ -42,7 +42,7 @@ export class ProductsComponent implements OnInit {
     this.cartService.search.subscribe((val: any) => {
       this.searchKey = val
     })
-    this.productFilter.filterApi().subscribe()
+    
   }
 
 
@@ -66,77 +66,28 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  
-// SERVİS E TAŞI 
 
-  //Filtering Operations(also can be done by api requests)
-  categoryFilterHandler(category: string) {
-    if(!(category=='')){
-      if(this.filteringURL.includes("&category"))
-      {let replace=`&category=${category}`
-      this.filteringURL= this.filteringURL.replace(/&category=[a-z]+/,replace)}
-      else{this.filteringURL+=`&category=${category}`}
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
-    if(category==''){
-      this.filteringURL= this.filteringURL.replace(/&category=[a-z]+/,"")
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
+
+  //Filtering Operations(By api requests)
+  categoryFilter(category: string) {
+    this.productFilter.categoryFilterService(category)
+    this.productFilter.data.subscribe(res=>this.filteredProducts=res)
   }
 
   priceFilter(min: any, max: any) {
-    if(!(min==="")){
-      if(this.filteringURL.includes("&price_gte"))
-      {let replace=`&price_gte=${min}`
-      this.filteringURL= this.filteringURL.replace(/&price_gte=\d+/,replace)}
-     else{this.filteringURL+=`&price_gte=${min}`} 
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
-    if(min===""){
-      this.filteringURL.replace(`&price_gte=${min}`,"")
-      let replace=`&price_gte=${min}`
-      this.filteringURL= this.filteringURL.replace(replace,"")
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
-
-    if(!(max==="")){
-      if(this.filteringURL.includes("&price_lte"))
-      { let replace=`&price_lte=${max}`
-      this.filteringURL= this.filteringURL.replace(/&price_lte=\d+/,replace)}
-     else{this.filteringURL+=`&price_lte=${max}`} 
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
-    if(max===""){
-      this.filteringURL.replace(`&price_lte=${max}`,"")
-      let replace=`&price_lte=${max}`
-      this.filteringURL= this.filteringURL.replace(replace,"")
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
+    this.productFilter.priceFilterService(min,max)
+    this.productFilter.data.subscribe(res=>this.filteredProducts=res)
   }
 
  
   brandFilter(brand: any) { 
-    if(brand.target.checked){
-      this.filteringURL+=`&brand=${brand.target.value}`
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
-    if(!(brand.target.checked)){
-      let replace=`&brand=${brand.target.value}`
-      this.filteringURL= this.filteringURL.replace(replace,"")
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
+    this.productFilter.brandFilterService(brand)
+    this.productFilter.data.subscribe(res=>this.filteredProducts=res)
   }
 
   starFilter(star: any) {
-    if(star.target.checked){
-      this.filteringURL+=`&star_gte=${star.target.value}`
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
-    if(!(star.target.checked)){
-      let replace=`&star_gte=${star.target.value}`
-      this.filteringURL= this.filteringURL.replace(replace,"")
-      this.http.get(`http://localhost:3000/products${this.filteringURL}`).subscribe(res=>this.filteredProducts=res)
-    }
+  this.productFilter.starFilterService(star)
+  this.productFilter.data.subscribe(res=>this.filteredProducts=res)
   }
 
 }
