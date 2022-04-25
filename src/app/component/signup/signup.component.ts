@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { passwordMatchValidatorService } from 'src/app/services/passwordMatchValidator.service';
 import { usernameValidator } from 'src/app/services/regexValidator';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit, OnDestroy{
   public signupForm!: FormGroup
-
+  private sub$?:Subscription
   constructor(private formBuilder: FormBuilder, private router: Router, private api: ApiService, private match: passwordMatchValidatorService, private toastr: ToastrService) { }
   //using pattern att. for regex valid.(common patterns are used)
   emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
@@ -39,8 +40,9 @@ export class SignupComponent implements OnInit {
     )
   }
   // sending data with signUp api
+  //To show error message subcribe is used
   signUp() {
-    this.api.signUp(this.signupForm).subscribe(res => {
+    this.sub$=this.api.signUp(this.signupForm).subscribe(res => {
       this.toastr.success('You have signed up successfully')
       this.signupForm.reset()
       this.router.navigate(["login"])
@@ -48,4 +50,10 @@ export class SignupComponent implements OnInit {
       this.toastr.error("Something went wrong")
     })
   }
+
+
+  ngOnDestroy(): void {
+    this.sub$?.unsubscribe()
+  }
 }
+

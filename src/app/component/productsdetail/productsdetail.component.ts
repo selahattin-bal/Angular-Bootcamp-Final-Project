@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -8,7 +8,8 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './productsdetail.component.html',
   styleUrls: ['./productsdetail.component.css']
 })
-export class ProductsdetailComponent implements OnInit {
+export class ProductsdetailComponent implements OnInit, OnDestroy {
+  private sub$:any
   //for star template
   public star: number[] = [1, 2, 3, 4, 5];
   //public bc they will reached by template
@@ -22,10 +23,9 @@ export class ProductsdetailComponent implements OnInit {
     let itemId: any = this.route.snapshot.paramMap.get("id")
     this.currentUrl =`?id=${Number(itemId)}`
     //For template view taking data from server 
-    this.api.filterApi(this.currentUrl).subscribe(
+   this.sub$=this.api.filterApi(this.currentUrl).subscribe(
       res => {
         this.productsDetail = res;
-        console.log(this.productsDetail)
       })
   }
   //adding to cart from product detail page
@@ -33,6 +33,8 @@ export class ProductsdetailComponent implements OnInit {
     this.cartService.addtoCart(item);
     this.toastr.success('Item Added To Cart', 'Checkout');
   }
-
+ngOnDestroy(): void {
+    this.sub$?.unsubscribe()
+}
 
 }

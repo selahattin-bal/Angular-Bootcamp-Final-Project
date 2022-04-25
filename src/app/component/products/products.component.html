@@ -330,7 +330,7 @@
             <strong class="d-block pt-2"
               >Result:
               {{
-                (filteredProducts | filterHandler: searchKey:"title").length
+                (filteredProducts | filterHandler: (searchKey$|async)!:"title").length
               }}
               items found
             </strong>
@@ -378,7 +378,7 @@
             <!-- All and Filtered Product Start  -->
             <ng-container
               *ngFor="
-                let item of filteredProducts | filterHandler: searchKey:'title'
+                let item of filteredProducts | filterHandler: (searchKey$|async)!:'title'
               "
             >
               <div class="col-lg-4 col-md-6 col-sm-6">
@@ -452,7 +452,7 @@
             </div>
             <ng-container
               *ngFor="
-                let item of filteredProducts | filterHandler: searchKey:'title'
+                let item of filteredProducts | filterHandler: (searchKey$|async)!:'title'
               "
             >
               <article class="card card-product-list">

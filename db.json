@@ -57,15 +57,15 @@
       ]
     },
     {
-      "id": 4,
       "title": "Pour Over Coffee Maker with Permanent Filter, 1 Liter",
-      "price": 405.9,
       "brand": "Bodum",
+      "price": 405.9,
       "description": "Pour over Coffee: manual pour over Coffee maker allows you to brew an excellent cup of Coffee in minutes Stainless steel: includes a Permanent, stainless steel mesh filter that helps extract your coffee's aromatic oils and subtle flavors instead of being absorbed by a paper filter. ",
       "category": "coffeeaccessories",
       "image": "https://m.media-amazon.com/images/I/51EjKg6vAIL._AC_UL320_.jpg",
       "star": 4,
-      "comment": []
+      "comment": [],
+      "id": 4
     },
     {
       "id": 5,
@@ -114,7 +114,7 @@
     {
       "title": "French Press Coffee Maker, 304 Stainless Steel Coffee",
       "brand": "BAYKA",
-      "price": 100,
+      "price": 129.9,
       "description": "Medium original roast coffee has a classic, smooth flavor Maxwell House Medium Roast Original Roast Ground Coffee has a consistently great taste Made with 100% pure coffee Great served black or with cream and sugar. Try it with Maxwell House International Cafe as creamer",
       "category": "coffeeaccessories",
       "image": "https://m.media-amazon.com/images/I/71dMl1-+Z9L._AC_UL320_.jpg",

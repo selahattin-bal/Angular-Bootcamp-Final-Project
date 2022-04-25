@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
     localStorage.clear()
   }
 
+  //No need to unsubcribtion bc. wont be destroyed
 }
 
 
