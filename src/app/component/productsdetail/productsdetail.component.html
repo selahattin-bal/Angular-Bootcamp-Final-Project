@@ -40,7 +40,7 @@
             <li class="list-group-item" *ngFor="let star of star">
               <i
                 [class]="
-                productsDetail.star >= star
+                productsDetail[0].star >= star
                     ? 'fa fa-star text-success'
                     : 'fa fa-star-o text-gray'
                 "
@@ -56,31 +56,23 @@
 <div class="container">
   <div class="be-comment-block">
     <h1 class="comments-title">
-      Comments ({{ productsDetail[0].comment.length }})
+      Comments ({{ productsDetail[0].comments.length }})
     </h1>
     <div
       class="container"
       style="margin-top: 70px"
     >
       <div >
-        <div class="container" *ngFor="let item of productsDetail[0].comment">
+        <div class="container" *ngFor="let item of productsDetail[0].comments">
           <div class="be-comment">
-            <div class="be-img-comment">
-              <a href="blog-detail-2.html">
-                <img
-                  src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                  alt=""
-                  class="be-ava-comment"
-                />
-              </a>
-            </div>
+         
             <div class="be-comment-content">
               <span class="be-comment-name">
                 <a href="blog-detail-2.html">{{ item.username }}</a>
               </span>
               <span class="be-comment-time">
                 <i class="fa fa-clock-o"></i>
-                May 27, 2022 at 3:14am
+                {{item.time}}
               </span>
 
               <p class="be-comment-text">
@@ -92,40 +84,36 @@
       </div>
     </div>
     <div class="be-comment">
-      <div class="be-img-comment">
-        <a href="blog-detail-2.html">
-          <img
-            src="https://bootdey.com/img/Content/avatar/avatar2.png"
-            alt=""
-            class="be-ava-comment"
-          />
-        </a>
-      </div>
-
-      <form class="form-block">
+      
+      <!-- commenting section-->
+      <ngx-material-rating 
+      [(ngModel)]="rating" > 
+   </ngx-material-rating>
+      <form class="form-block"  [formGroup]="commentForm" (ngSubmit)="submit()">
         <div class="row">
           <div class="col-xs-12 col-sm-6">
             <div class="form-group fl_icon">
               <div class="icon"><i class="fa fa-user"></i></div>
-              <input class="form-input" type="text" placeholder="Your name" />
+              <input class="form-input" type="text" formControlName="username" placeholder="Name" />
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 fl_icon">
             <div class="form-group fl_icon">
               <div class="icon"><i class="fa fa-envelope-o"></i></div>
-              <input class="form-input" type="text" placeholder="Your email" />
+              <input class="form-input" type="text" formControlName="email"  placeholder="Email" />
             </div>
           </div>
           <div class="col-xs-12">
             <div class="form-group">
               <textarea
                 class="form-input"
-                required=""
-                placeholder="Your text"
+                formControlName="comment"  
+                placeholder="Comment"
               ></textarea>
             </div>
           </div>
-          <a class="btn btn-primary mx-auto" style="width: 100px">Submit</a>
+          <button class="btn btn-primary mx-auto" style="width: 15%" 
+          type="submit" >Submit</button>
         </div>
       </form>
     </div>

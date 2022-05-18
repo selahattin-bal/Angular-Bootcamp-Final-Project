@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Router } from '@angular/router';
 import { BehaviorSubject} from 'rxjs';
 import { product } from '../models/product';
 @Injectable({
@@ -14,7 +13,7 @@ export class ApiService {
   public url=new BehaviorSubject ("")
   private apiURL: string = "http://localhost:3000/"
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   //posting to db.json for fake json server firstly you have to start json server for working json-server --watch db.json 
 
@@ -30,9 +29,7 @@ export class ApiService {
 
   filterApi(filteringUrl:string) {
     return this.http.get<product>(`${this.apiURL}products${filteringUrl}`)
-      .pipe(map((res: any) => {
-        return res;
-      }))
+     
   }
 
   checkoutApi(itemList: any) {
@@ -60,21 +57,12 @@ export class ApiService {
   //ADMIN requests
   postItemApi(data: any) {
     return this.http.post<any>(`${this.apiURL}products`, data)
-      .pipe(map((res: any) => {
-        return res;
-      }))
   }
   deleteItemApi(id: number) {
     return this.http.delete<any>(`${this.apiURL}products/${id}`)
-      .pipe(map((res: any) => {
-        return res;
-      }))
   }
   updateItemApi(data: any, id: number) {
     return this.http.put<any>(`${this.apiURL}products/${id}`, data)
-      .pipe(map((res: any) => {
-        return res;
-      }))
   }
   getItemApi() {
     return this.http.get<any>(`${this.apiURL}products`)

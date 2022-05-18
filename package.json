@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
     "ng-angular-popup": "^0.1.2",
+    "ngx-material-rating": "^2.0.0",
     "ngx-toastr": "^14.2.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",

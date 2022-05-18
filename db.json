@@ -1,28 +1,21 @@
 {
   "products": [
     {
-      "id": 1,
       "title": "Hazelnut Arabica Ground,Medium Roast,340 Gr",
       "brand": "AmazonFresh",
-      "price": 149.9,
+      "price": 139.9,
       "description": "Fragrant medium-light roast with toasted hazelnut flavor One 12-ounce bag of ground coffee 100% Arabica coffee grown in Central and South America Roasted and packed in the U.S.A.",
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81w29mbZOtL._AC_UL320_.jpg",
       "star": 5,
-      "comment": [
+      "comments": [
         {
-          "username": "Howard Schultz",
-          "comment": "I was taken by the power that savoring a simple cup of coffee can have to connect people and create community."
-        },
-        {
-          "username": "Anonymous",
-          "comment": "Coffee is the best medicine..."
-        },
-        {
-          "username": "David Lynch",
-          "comment": "To me, the smell of freshmade coffee is one of the greatest inventions."
+          "username": "sdfsd",
+          "comment": "dfsdf",
+          "time": "Mon May 16 2022 18:47:35 GMT+0300 (GMT+03:00)"
         }
-      ]
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -33,10 +26,11 @@
       "image": "https://m.media-amazon.com/images/I/61AzSeP33yL._AC_UL320_.jpg",
       "category": "coffee",
       "star": 5,
-      "comment": [
+      "comments": [
         {
           "username": "Martin Doe",
-          "comment": "People say money can’t buy happiness. They Lie. Money buys Coffee, Coffee makes Me Happy!"
+          "comment": "People say money can’t buy happiness. They Lie. Money buys Coffee, Coffee makes Me Happy!",
+          "time": "Thu May 12 2022 13:19:11 GMT+0300 (GMT+03:00)"
         }
       ]
     },
@@ -49,10 +43,11 @@
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81aAFRMOddL._AC_UL320_.jpg",
       "star": 3,
-      "comment": [
+      "comments": [
         {
           "username": "Alex Doe",
-          "comment": "Good Coffee Cheaper than Prozac!"
+          "comment": "Good Coffee Cheaper than Prozac!",
+          "time": "Thu May 12 2022 13:19:11 GMT+0300 (GMT+03:00)"
         }
       ]
     },
@@ -64,7 +59,7 @@
       "category": "coffeeaccessories",
       "image": "https://m.media-amazon.com/images/I/51EjKg6vAIL._AC_UL320_.jpg",
       "star": 4,
-      "comment": [],
+      "comments": [],
       "id": 4
     },
     {
@@ -76,7 +71,7 @@
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81Q5T-8jvAL._AC_UL320_.jpg",
       "star": 4,
-      "comment": []
+      "comments": []
     },
     {
       "id": 6,
@@ -87,7 +82,7 @@
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/81ELSPN3xAL._AC_UL320_.jpg",
       "star": 2,
-      "comment": []
+      "comments": []
     },
     {
       "id": 7,
@@ -98,7 +93,7 @@
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/819yDDqqOJL._AC_UL320_.jpg",
       "star": 4,
-      "comment": []
+      "comments": []
     },
     {
       "id": 8,
@@ -109,7 +104,7 @@
       "category": "coffee",
       "image": "https://m.media-amazon.com/images/I/91iMYD0f7iL._AC_UL320_.jpg",
       "star": 5,
-      "comment": []
+      "comments": []
     },
     {
       "title": "French Press Coffee Maker, 304 Stainless Steel Coffee",
@@ -119,7 +114,7 @@
       "category": "coffeeaccessories",
       "image": "https://m.media-amazon.com/images/I/71dMl1-+Z9L._AC_UL320_.jpg",
       "star": 3,
-      "comment": [],
+      "comments": [],
       "id": 9
     }
   ],
@@ -139,51 +134,7 @@
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssfdgdf",
       "role": "admin",
       "id": 2
-    },
-    {
-      "username": "deneme",
-      "email": "selahattinbal06@gmail.com",
-      "password": "Metal678",
-      "confirmpassword": "Metal678",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssfdgdf",
-      "role": "user",
-      "id": 3
     }
   ],
-  "orders": [
-    [
-      {
-        "user": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssfdgdf\"",
-        "ordernumber": 228943
-      },
-      {
-        "order": [
-          {
-            "id": 2,
-            "title": " Dark Roast Ground Coffee Dickason's Blend 510 Gr",
-            "price": 79.9,
-            "brand": "Peet's Coffee",
-            "description": "Major Dickason`s Blend: Conceived by Mr. Peet and his most discerning customer, Major Dickason’s Blend has become the coffee that epitomizes the rich, flavorful taste of Peet`s Flavor and Roast: Incomparable world blend, rich, complex, and full-bodied. Dark roast. 100% Arabica Coffee",
-            "image": "https://m.media-amazon.com/images/I/61AzSeP33yL._AC_UL320_.jpg",
-            "category": "coffee",
-            "star": 5,
-            "quantity": 1,
-            "total": 79.9
-          },
-          {
-            "id": 3,
-            "title": "Veranda Blend Light Blonde Roast Ground Coffee 340 Gr",
-            "price": 246.9,
-            "brand": "Starbucks",
-            "description": "PREMIUM GROUND COFFEE —Starbucks delivers exceptional coffee cup after cup with this 12-ounce bag of Veranda Blend lightly roasted ground coffee—6 bags total VERANDA BLEND—Our lightest roasted coffee with notes of toasted malt and baking chocolate FRESH TASTE—Starbucks. ",
-            "category": "coffee",
-            "image": "https://m.media-amazon.com/images/I/81aAFRMOddL._AC_UL320_.jpg",
-            "star": 3.5,
-            "quantity": 1,
-            "total": 246.9
-          }
-        ]
-      }
-    ]
-  ]
+  "orders": []
 }

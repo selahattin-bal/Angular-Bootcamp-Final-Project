@@ -23,7 +23,6 @@ export class ProductsComponent implements OnInit,OnDestroy {
   public searchKey$?: Observable<string>
   public viewGrid:boolean = true
   public uniqueBrands:any = []
-  public filteringURL:string=`?`
 
   constructor(private api: ApiService, private cartService: CartService, private router: Router, private toastr: ToastrService,private productFilters:ProductfiltersService) { }
 
@@ -91,4 +90,5 @@ export class ProductsComponent implements OnInit,OnDestroy {
       this.sub1$?.unsubscribe()
       this.sub2$?.unsubscribe()
   }
+
 }

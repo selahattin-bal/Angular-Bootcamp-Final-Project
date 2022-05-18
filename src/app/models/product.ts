@@ -8,6 +8,6 @@ export class product
    public  category!:string;
    public  image!:string
    public  star!:number
-   public comment!:[]
+   public comments!:[]
 
 }

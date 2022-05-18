@@ -24,7 +24,7 @@ export class CartComponent implements OnInit,OnDestroy {
           //assigning quantity and total for checkout 
           Object.assign(item,{quantity: 1, total: Number(item.price)});
           //deleting comment and star bc. it is unnecessary for order
-          delete item.comment
+          delete item.comments
           delete item.star
         });
         //calculation for grandtotal 

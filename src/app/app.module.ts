@@ -29,8 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-import { UnsavedGuard } from './services/unsaved.guard';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import { NgxMaterialRatingModule } from 'ngx-material-rating';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,8 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
   MatSelectModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  NgxMaterialRatingModule
   ],
   providers: [
     {
